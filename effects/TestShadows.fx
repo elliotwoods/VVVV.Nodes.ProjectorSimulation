@@ -13,6 +13,14 @@ float4x4 tW: WORLD;        //the models world matrix
 float4x4 tV: VIEW;         //view matrix as set via Renderer (EX9)
 float4x4 tP: PROJECTION;   //projection matrix as set via Renderer (EX9)
 float4x4 tWVP: WORLDVIEWPROJECTION;
+float4x4 tWV: WORLDVIEW;
+
+//colour
+float4 lAmb  : COLOR <String uiname="Ambient Color";>  = {0.15, 0.15, 0.15, 1};
+float4 lDiff : COLOR <String uiname="Diffuse Color";>  = {0.85, 0.85, 0.85, 1};
+float4 lSpec : COLOR <String uiname="Specular Color";> = {0.35, 0.35, 0.35, 1};
+float3 lDir <String uiname="Light Direction";> = {0.0, 0.0, 1.0};
+
 
 //texture
 texture TexDepth <string uiname="Depth Map";>;
@@ -31,6 +39,8 @@ struct vs2ps
 {
     float4 Pos : POSITION;
 	float4 PosW : TEXCOORD0;
+    float4 Diffuse: COLOR0;
+    float4 Specular: COLOR1;
 };
 
 // --------------------------------------------------------------------------------------------------
@@ -39,6 +49,7 @@ struct vs2ps
 
 vs2ps VS(
     float4 Pos : POSITION,
+    float3 NormO : NORMAL,
     float4 TexCd : TEXCOORD0)
 {
     //inititalize all fields of output struct with 0
@@ -48,6 +59,30 @@ vs2ps VS(
     Out.Pos = mul(Pos, tWVP);
 
 	Out.PosW = mul(Pos,tW);
+	
+	//inverse light direction in view space
+    float3 LightDirV = normalize(-mul(lDir, tV));
+
+    //normal in view space
+    float3 NormV = normalize(mul(NormO, tWV));
+
+    //view direction = inverse vertexposition in viewspace
+    float4 PosV = mul(Pos, tWV);
+    float3 ViewDirV = normalize(-PosV);
+
+    //halfvector
+    float3 H = normalize(ViewDirV + LightDirV);
+
+    //compute blinn lighting
+    float3 shades = lit(dot(NormV, LightDirV), dot(NormV, H), 25);
+
+    float4 diff = lDiff * shades.y;
+    diff.a = 1;
+    float4 spec = lSpec * shades.z;
+    spec.a = 1;
+	Out.Diffuse = diff + lAmb;
+    Out.Specular = spec;
+	
 	
     return Out;
 }
@@ -99,7 +134,7 @@ float4 PS(vs2ps In): COLOR
 	for (int i=0; i<PROJECTOR_COUNT; i++)
 		col += testProjector(i, In.PosW);
 	
-    return col;
+    return col + lAmb + In.Diffuse + In.Specular;
 }
 
 // --------------------------------------------------------------------------------------------------
