@@ -40,6 +40,7 @@ struct vs2ps
     float4 Pos : POSITION;
 	float4 PosP : TEXCOORD1;
 	float4 PosW : TEXCOORD0;
+	float4 NormW : TEXCOORD2;
     float4 Diffuse: COLOR0;
     float4 Specular: COLOR1;
 };
@@ -60,6 +61,7 @@ vs2ps VS(
     Out.Pos = mul(Pos, tWVP);
 
 	Out.PosW = mul(Pos,tW);
+	Out.NormW = normalize(mul(NormO, tW));
 	
 	//inverse light direction in view space
     float3 LightDirV = normalize(-mul(lDir, tV));
@@ -84,7 +86,6 @@ vs2ps VS(
 	Out.Diffuse = diff + lAmb;
     Out.Specular = spec;
 	
-	
     return Out;
 }
 
@@ -96,12 +97,13 @@ float4x4 tProjector[PROJECTOR_COUNT];
 int2 ProjectorResolution = {1024, 768};
 float threshold = 0.001;
 float brightness = 5;
-bool applyAliasing = false;
 float Alpha = 1.0f;
+bool applyFade = true;
+bool applyNormals = true;
 
-float testProjector(int i, float4 PosW, bool applyFade=true)
+float testProjector(int i, vs2ps input)
 {
-	float4 PosProjector = mul(PosW, tProjector[i]);
+	float4 PosProjector = mul(input.PosW, tProjector[i]);
 	float Depth = PosProjector.z;
 	
 	PosProjector /= PosProjector.w;
@@ -112,25 +114,31 @@ float testProjector(int i, float4 PosW, bool applyFade=true)
 	
 	DepthMapCd.x += i;
 	DepthMapCd.x /= float(PROJECTOR_COUNT);
-	
 
 	float DepthMapValue = tex2D(SampDepth, DepthMapCd).r;
 	
-	float value;
+	float value = 1.0f;
 	
 	//this step applies depth testing and aliasing
 	//aliasing occurs if threshold is very low (< 0.01)
-	value = 1.0f - smoothstep(0, threshold, abs(Depth - DepthMapValue));	
+	value -= smoothstep(0, threshold, abs(Depth - DepthMapValue));	
 	
 	if (applyFade)
 	{
 		//inverse square brightness
 		value /= Depth * Depth;
-		value *= brightness;
-	
-		//test inside
-		value *= abs(PosProjector.x) < 1.0f && abs(PosProjector.y) < 1.0f;	
 	}
+	
+	if (applyNormals)
+	{
+		//we draw on front and back faces, we presume shadow performs back culling for us
+		value *= clamp(abs(normalize(mul(input.NormW, tProjector[i])).z), 0, 1);
+	}
+	
+	value *= brightness;
+	
+	//test inside
+	value *= abs(PosProjector.x) < 1.0f && abs(PosProjector.y) < 1.0f;	
 	
 	return value;
 }
@@ -142,7 +150,7 @@ float4 PreviewCoverage(vs2ps In): COLOR
 	col.rgb = 0;
 	
 	for (int i=0; i<PROJECTOR_COUNT; i++)
-		col.b += testProjector(i, In.PosW);
+		col.b += testProjector(i, In);
 	
 	float4 Light = lAmb + In.Diffuse + In.Specular;
 	Light.b = 0.0f;

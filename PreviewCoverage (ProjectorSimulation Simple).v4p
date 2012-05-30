@@ -13,9 +13,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="1" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="1350" top="270" type="Node" width="0">
+   <BOUNDS height="0" left="1260" top="270" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="1350" top="270" type="Box" width="795">
+   <BOUNDS height="240" left="1260" top="270" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -25,9 +25,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="1965" top="795" type="Node" width="0">
+   <BOUNDS height="0" left="1755" top="795" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="1965" top="795" type="Box" width="795">
+   <BOUNDS height="240" left="1755" top="795" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
