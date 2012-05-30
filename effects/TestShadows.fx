@@ -38,6 +38,7 @@ sampler SampDepth = sampler_state    //sampler for doing the texture-lookup
 struct vs2ps
 {
     float4 Pos : POSITION;
+	float4 PosP : TEXCOORD1;
 	float4 PosW : TEXCOORD0;
     float4 Diffuse: COLOR0;
     float4 Specular: COLOR1;
@@ -95,7 +96,7 @@ float4x4 tProjector[PROJECTOR_COUNT];
 float threshold = 0.001;
 float brightness = 5;
 
-float4 testProjector(int i, float4 PosW)
+float testProjector(int i, float4 PosW, bool applyFade=true)
 {
 	float4 PosProjector = mul(PosW, tProjector[i]);
 	float Depth = PosProjector.z;
@@ -112,18 +113,20 @@ float4 testProjector(int i, float4 PosW)
 
 	float DepthMapValue = tex2D(SampDepth, DepthMapCd).r;
 	
-	float4 col;
-	col = 1.0f - smoothstep(0, threshold, abs(Depth - DepthMapValue));	
+	float value;
+	value = 1.0f - smoothstep(0, threshold, abs(Depth - DepthMapValue));	
 	
-	//inverse square brightness
-	col /= Depth * Depth;
-	col *= brightness;
+	if (applyFade)
+	{
+		//inverse square brightness
+		value /= Depth * Depth;
+		value *= brightness;
 	
-	//test inside
-	col.rgb *= abs(PosProjector.x) < 1.0f && abs(PosProjector.y) < 1.0f;
+		//test inside
+		value *= abs(PosProjector.x) < 1.0f && abs(PosProjector.y) < 1.0f;	
+	}
 	
-	col.a = 1;
-	return col;
+	return value;
 }
 
 float4 PS(vs2ps In): COLOR
@@ -132,9 +135,74 @@ float4 PS(vs2ps In): COLOR
 	col.rgb = 0;
 	
 	for (int i=0; i<PROJECTOR_COUNT; i++)
-		col += testProjector(i, In.PosW);
+		col.rgb += testProjector(i, In.PosW);
 	
-    return col + lAmb + In.Diffuse + In.Specular;
+	float4 result = col + lAmb + In.Diffuse + In.Specular;
+	return result;
+}
+
+int2 ProjectorResolution = {1024, 768};
+
+float4 ProjectorPosition(int iProjector, float4 PosW)
+{
+	float4 PosProjector = mul(PosW, tProjector[iProjector]);
+	float Depth = PosProjector.z;
+	
+	PosProjector /= PosProjector.w;
+	return PosProjector;
+}
+int ProjectorIndex(int iProjector, float4 PosW)
+{
+	float4 PosProjector = mul(PosW, tProjector[iProjector]);
+	float Depth = PosProjector.z;
+	
+	PosProjector /= PosProjector.w;
+	float2 DepthMapCd = PosProjector.xy;
+	DepthMapCd += 1.0f;
+	DepthMapCd /= 2.0f;
+	DepthMapCd.y = 1.0f - DepthMapCd.y;
+	
+	DepthMapCd.x += iProjector;
+	DepthMapCd.x /= float(PROJECTOR_COUNT);
+	
+	float DepthMapValue = tex2D(SampDepth, DepthMapCd).r;
+	
+	float value;
+	value = 1.0f - smoothstep(0, threshold, abs(Depth - DepthMapValue));	
+
+	int index = floor(DepthMapCd.x * ProjectorResolution.x) + floor(DepthMapCd.y * ProjectorResolution.y) * ProjectorResolution.x;
+	return (value > 0.1f) * index;
+}
+
+int4 PSScanPreview(vs2ps In) : COLOR
+{
+	int4 output;
+	
+	output.x = ProjectorIndex(0, In.PosW);
+	output.y = ProjectorIndex(1, In.PosW);
+	output.z = ProjectorIndex(2, In.PosW);
+	output.w = 1;
+	
+    return output;
+}
+
+float4 PSWorldXYZ(vs2ps In) : COLOR
+{
+	float4 xyz = In.PosW;
+	float4 col;
+	col.rgb = xyz.xyz / xyz.w;
+	col.rgb += 5.0f;
+	col.a = 1;
+	return col;
+}
+
+float4 PSProjector1XYZ(vs2ps In) : COLOR
+{
+	float size = 1.0f;
+	float4 PosP = ProjectorPosition(0, In.PosW);
+	PosP.a = 1.0f - (PosP.x < -size || PosP.x > size);
+	PosP.a *= 1.0f - (PosP.y < -size || PosP.y > size);
+	return PosP;
 }
 
 // --------------------------------------------------------------------------------------------------
@@ -149,4 +217,32 @@ technique TProjectShadows
         VertexShader = compile vs_3_0 VS();
         PixelShader = compile ps_3_0 PS();
     }
+}
+
+technique TDataSetPreview
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PSScanPreview();
+    }
+}
+
+technique TWorldXYZ
+{
+	pass P0
+	{
+		VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PSWorldXYZ();
+	}
+}
+
+technique TProjector1XYZ
+{
+	pass P0
+	{
+		VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PSProjector1XYZ();
+	}
 }

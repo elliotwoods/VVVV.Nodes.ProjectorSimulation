@@ -1,4 +1,4 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha26.1.dtd" >
    <PATCH nodename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\ColorSpread (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\ColorSpread (ProjectorSimulation).v4p" systemname="ColorSpread (ProjectorSimulation)">
    <BOUNDS height="5025" left="10980" top="6570" type="Window" width="4485">
    </BOUNDS>
@@ -22,18 +22,18 @@
    </NODE>
    <LINK dstnodeid="1" dstpinname="Input" srcnodeid="0" srcpinname="Output Node">
    </LINK>
-   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="2">
-   <BOUNDS type="Node" left="735" top="3510" width="100" height="100">
+   <NODE componentmode="InABox" id="2" nodename="IOBox (Color)" systemname="IOBox (Color)">
+   <BOUNDS height="100" left="735" top="3510" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="735" top="3510" width="2250" height="480">
+   <BOUNDS height="480" left="735" top="3510" type="Box" width="2250">
    </BOUNDS>
    <PIN pinname="Color Input" visible="1">
    </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Output" encoded="0">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Output">
    </PIN>
    </NODE>
-   <NODE systemname="Switch (Color Input)" nodename="Switch (Color Input)" componentmode="Hidden" id="3">
-   <BOUNDS type="Node" left="720" top="2865" width="2100" height="270">
+   <NODE componentmode="Hidden" id="3" nodename="Switch (Color Input)" systemname="Switch (Color Input)">
+   <BOUNDS height="270" left="720" top="2865" type="Node" width="2100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -42,10 +42,10 @@
    <PIN pinname="Input 2" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="3" srcpinname="Output" dstnodeid="2" dstpinname="Color Input">
+   <LINK dstnodeid="2" dstpinname="Color Input" srcnodeid="3" srcpinname="Output">
    </LINK>
-   <NODE systemname="GT (Value)" nodename="GT (Value)" componentmode="Hidden" id="4">
-   <BOUNDS type="Node" left="720" top="2325" width="100" height="100">
+   <NODE componentmode="Hidden" id="4" nodename="GT (Value)" systemname="GT (Value)">
+   <BOUNDS height="100" left="720" top="2325" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -54,44 +54,44 @@
    <PIN pinname="Input 2" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Output" dstnodeid="3" dstpinname="Switch">
+   <LINK dstnodeid="3" dstpinname="Switch" srcnodeid="4" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Count" dstnodeid="4" dstpinname="Input 1">
+   <LINK dstnodeid="4" dstpinname="Input 1" srcnodeid="1" srcpinname="Count">
    </LINK>
-   <NODE systemname="HSL (Color Join)" nodename="HSL (Color Join)" componentmode="Hidden" id="5">
-   <BOUNDS type="Node" left="2775" top="2325" width="100" height="100">
+   <NODE componentmode="Hidden" id="5" nodename="HSL (Color Join)" systemname="HSL (Color Join)">
+   <BOUNDS height="100" left="2775" top="2325" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Hue" visible="1">
    </PIN>
-   <PIN pinname="Lightness" slicecount="1" values="0.8">
+   <PIN pinname="Lightness">
    </PIN>
    </NODE>
-   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="3" dstpinname="Input 2">
+   <LINK dstnodeid="3" dstpinname="Input 2" srcnodeid="5" srcpinname="Output">
    </LINK>
-   <NODE systemname="LinearSpread (Spreads)" nodename="LinearSpread (Spreads)" componentmode="Hidden" id="6">
-   <BOUNDS type="Node" left="2775" top="1935" width="100" height="100">
+   <NODE componentmode="Hidden" id="6" nodename="LinearSpread (Spreads)" systemname="LinearSpread (Spreads)">
+   <BOUNDS height="100" left="2775" top="1935" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Spread Count" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="6" srcpinname="Output" dstnodeid="5" dstpinname="Hue">
+   <LINK dstnodeid="5" dstpinname="Hue" srcnodeid="6" srcpinname="Output">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="Count" dstnodeid="6" dstpinname="Spread Count" linkstyle="VHV">
+   <LINK dstnodeid="6" dstpinname="Spread Count" linkstyle="VHV" srcnodeid="1" srcpinname="Count">
    <LINKPOINT x="780" y="1673">
    </LINKPOINT>
    <LINKPOINT x="3735" y="1673">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="7" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="705" top="60" width="2670" height="270">
+   <NODE componentmode="InABox" id="7" nodename="IOBox (String)" systemname="IOBox (String)">
+   <BOUNDS height="270" left="705" top="60" type="Node" width="2670">
    </BOUNDS>
-   <BOUNDS type="Box" left="705" top="60" width="2670" height="270">
+   <BOUNDS height="270" left="705" top="60" type="Box" width="2670">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|//assigns colours to the projectors|" encoded="0">
+   <PIN encoded="0" pinname="Input String" slicecount="1" visible="0" values="|//assigns colours to the projectors|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -100,4 +100,20 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="8" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="3120" top="450" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3120" top="450" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.8">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Lightness" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="8" srcpinname="Y Output Value" dstnodeid="5" dstpinname="Lightness">
+   </LINK>
    </PATCH>
