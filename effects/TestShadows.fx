@@ -6,7 +6,7 @@
 // --------------------------------------------------------------------------------------------------
 // PARAMETERS:
 // --------------------------------------------------------------------------------------------------
-#define PROJECTOR_COUNT 4
+#define PROJECTOR_COUNT 6
 
 //transforms
 float4x4 tW: WORLD;        //the models world matrix
@@ -93,8 +93,11 @@ vs2ps VS(
 // --------------------------------------------------------------------------------------------------
 
 float4x4 tProjector[PROJECTOR_COUNT];
+int2 ProjectorResolution = {1024, 768};
 float threshold = 0.001;
 float brightness = 5;
+bool applyAliasing = false;
+float Alpha = 1.0f;
 
 float testProjector(int i, float4 PosW, bool applyFade=true)
 {
@@ -114,6 +117,9 @@ float testProjector(int i, float4 PosW, bool applyFade=true)
 	float DepthMapValue = tex2D(SampDepth, DepthMapCd).r;
 	
 	float value;
+	
+	//this step applies depth testing and aliasing
+	//aliasing occurs if threshold is very low (< 0.01)
 	value = 1.0f - smoothstep(0, threshold, abs(Depth - DepthMapValue));	
 	
 	if (applyFade)
@@ -129,19 +135,22 @@ float testProjector(int i, float4 PosW, bool applyFade=true)
 	return value;
 }
 
-float4 PS(vs2ps In): COLOR
+float4 PreviewCoverage(vs2ps In): COLOR
 {
+	//BLUE REPRESENTS COVERAGE
 	float4 col = 1;
 	col.rgb = 0;
 	
 	for (int i=0; i<PROJECTOR_COUNT; i++)
-		col.rgb += testProjector(i, In.PosW);
+		col.b += testProjector(i, In.PosW);
 	
-	float4 result = col + lAmb + In.Diffuse + In.Specular;
+	float4 Light = lAmb + In.Diffuse + In.Specular;
+	Light.b = 0.0f;
+	
+	float4 result = col + Light;
+	result.a *= Alpha;
 	return result;
 }
-
-int2 ProjectorResolution = {1024, 768};
 
 float4 ProjectorPosition(int iProjector, float4 PosW)
 {
@@ -176,11 +185,13 @@ int ProjectorIndex(int iProjector, float4 PosW)
 
 int4 PSScanPreview(vs2ps In) : COLOR
 {
-	int4 output;
-	
-	output.x = ProjectorIndex(0, In.PosW);
-	output.y = ProjectorIndex(1, In.PosW);
-	output.z = ProjectorIndex(2, In.PosW);
+	int4 output = 0;
+	if (PROJECTOR_COUNT >= 3)
+	{
+		output.x = ProjectorIndex(0, In.PosW);
+		output.y = ProjectorIndex(1, In.PosW);
+		output.z = ProjectorIndex(2, In.PosW);	
+	}
 	output.w = 1;
 	
     return output;
@@ -215,7 +226,7 @@ technique TProjectShadows
     {
         //Wrap0 = U;  // useful when mesh is round like a sphere
         VertexShader = compile vs_3_0 VS();
-        PixelShader = compile ps_3_0 PS();
+        PixelShader = compile ps_3_0 PreviewCoverage();
     }
 }
 

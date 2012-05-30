@@ -1,4 +1,4 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta26.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha28.dtd" >
    <PATCH nodename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)">
    <BOUNDS height="6870" left="0" top="8460" type="Window" width="14340">
    </BOUNDS>
@@ -25,7 +25,7 @@
    </PIN>
    <PIN pinname="XYZ" visible="1">
    </PIN>
-   <PIN pinname="Transform In" slicecount="1" values="||" visible="1">
+   <PIN pinname="Transform In" slicecount="1" visible="1" values="||">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="9" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -131,7 +131,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Units" slicecount="1" values="d:w" encoded="0">
+   <PIN pinname="Units" slicecount="1" encoded="0" values="d:w">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="22" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -145,7 +145,7 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Units" slicecount="1" values="w:h" encoded="0">
+   <PIN pinname="Units" slicecount="1" encoded="0" values="w:h">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="24" nodename="Divide (Value)" systemname="Divide (Value)">
@@ -173,6 +173,10 @@
    </PIN>
    <PIN pinname="Right" visible="1">
    </PIN>
+   <PIN pinname="Near Plane">
+   </PIN>
+   <PIN pinname="Far Plane">
+   </PIN>
    </NODE>
    <LINK dstnodeid="29" dstpinname="Relative To Distance" srcnodeid="21" srcpinname="Y Output Value">
    </LINK>
@@ -187,9 +191,9 @@
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.5">
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
-   <PIN pinname="Units" slicecount="1" values="y:h" encoded="0">
+   <PIN pinname="Units" slicecount="1" encoded="0" values="y:h">
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="32" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -353,7 +357,7 @@
    </BOUNDS>
    <PIN pinname="Transform In 2" visible="1">
    </PIN>
-   <PIN pinname="Transform In 1" visible="1">
+   <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -363,5 +367,45 @@
    <LINK srcnodeid="20" srcpinname="Output Node" dstnodeid="45" dstpinname="Transform In 1">
    </LINK>
    <LINK srcnodeid="45" srcpinname="Transform Out" dstnodeid="12" dstpinname="Transform In 1">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="46" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="14025" top="285" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="14025" top="285" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0.05">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Near Plane|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="46" srcpinname="Y Output Value" dstnodeid="29" dstpinname="Near Plane" linkstyle="Bezier">
+   <LINKPOINT x="14010" y="2318">
+   </LINKPOINT>
+   <LINKPOINT x="10635" y="2318">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="47" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="15210" top="300" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="15210" top="300" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="100">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||" encoded="0">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Far Plane|" encoded="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="47" srcpinname="Y Output Value" dstnodeid="29" dstpinname="Far Plane" linkstyle="Bezier">
+   <LINKPOINT x="15210" y="2318">
+   </LINKPOINT>
+   <LINKPOINT x="11340" y="2318">
+   </LINKPOINT>
    </LINK>
    </PATCH>
