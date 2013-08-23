@@ -6,7 +6,8 @@
 // --------------------------------------------------------------------------------------------------
 // PARAMETERS:
 // --------------------------------------------------------------------------------------------------
-#define PROJECTOR_COUNT 6
+//#define PROJECTOR_COUNT 2
+#define MAX_PROJECTOR_COUNT 64
 
 //transforms
 float4x4 tW: WORLD;        //the models world matrix
@@ -21,6 +22,7 @@ float4 lDiff : COLOR <String uiname="Diffuse Color";>  = {0.85, 0.85, 0.85, 1};
 float4 lSpec : COLOR <String uiname="Specular Color";> = {0.35, 0.35, 0.35, 1};
 float3 lDir <String uiname="Light Direction";> = {0.0, 0.0, 1.0};
 
+int ProjectorCount = 2;
 
 //texture
 texture TexDepth <string uiname="Depth Map";>;
@@ -93,7 +95,7 @@ vs2ps VS(
 // PIXELSHADERS:
 // --------------------------------------------------------------------------------------------------
 
-float4x4 tProjector[PROJECTOR_COUNT];
+float4x4 tProjector[MAX_PROJECTOR_COUNT];
 int2 ProjectorResolution = {1024, 768};
 float threshold = 0.001;
 float brightness = 5;
@@ -101,7 +103,7 @@ float Alpha = 1.0f;
 bool applyFade = true;
 bool applyNormals = true;
 
-float testProjector(int i, vs2ps input)
+float testProjector(int i, vs2ps input, int projectorCount)
 {
 	float4 PosProjector = mul(input.PosW, tProjector[i]);
 	float Depth = PosProjector.z;
@@ -113,7 +115,7 @@ float testProjector(int i, vs2ps input)
 	DepthMapCd.y = 1.0f - DepthMapCd.y;
 	
 	DepthMapCd.x += i;
-	DepthMapCd.x /= float(PROJECTOR_COUNT);
+	DepthMapCd.x /= float(projectorCount);
 
 	float DepthMapValue = tex2D(SampDepth, DepthMapCd).r;
 	
@@ -143,14 +145,14 @@ float testProjector(int i, vs2ps input)
 	return value;
 }
 
-float4 PreviewCoverage(vs2ps In): COLOR
+float4 PreviewCoverage(vs2ps In, int projectorCount): COLOR
 {
 	//BLUE REPRESENTS COVERAGE
 	float4 col = 1;
 	col.rgb = 0;
 	
-	for (int i=0; i<PROJECTOR_COUNT; i++)
-		col.b += testProjector(i, In);
+	for (int i=0; i<projectorCount; i++)
+		col.b += testProjector(i, In, projectorCount);
 	
 	float4 Light = lAmb + In.Diffuse + In.Specular;
 	Light.b = 0.0f;
@@ -159,6 +161,39 @@ float4 PreviewCoverage(vs2ps In): COLOR
 	result.a *= Alpha;
 	return result;
 }
+
+float4 PreviewCoverage1(vs2ps In): COLOR
+{ return PreviewCoverage(In, 1); }
+float4 PreviewCoverage2(vs2ps In): COLOR
+{ return PreviewCoverage(In, 2); }
+float4 PreviewCoverage3(vs2ps In): COLOR
+{ return PreviewCoverage(In, 3); }
+float4 PreviewCoverage4(vs2ps In): COLOR
+{ return PreviewCoverage(In, 4); }
+float4 PreviewCoverage5(vs2ps In): COLOR
+{ return PreviewCoverage(In, 5); }
+float4 PreviewCoverage6(vs2ps In): COLOR
+{ return PreviewCoverage(In, 6); }
+float4 PreviewCoverage7(vs2ps In): COLOR
+{ return PreviewCoverage(In, 7); }
+float4 PreviewCoverage8(vs2ps In): COLOR
+{ return PreviewCoverage(In, 8); }
+float4 PreviewCoverage9(vs2ps In): COLOR
+{ return PreviewCoverage(In, 9); }
+float4 PreviewCoverage10(vs2ps In): COLOR
+{ return PreviewCoverage(In, 10); }
+float4 PreviewCoverage11(vs2ps In): COLOR
+{ return PreviewCoverage(In, 11); }
+float4 PreviewCoverage12(vs2ps In): COLOR
+{ return PreviewCoverage(In, 12); }
+float4 PreviewCoverage13(vs2ps In): COLOR
+{ return PreviewCoverage(In, 13); }
+float4 PreviewCoverage14(vs2ps In): COLOR
+{ return PreviewCoverage(In, 14); }
+float4 PreviewCoverage15(vs2ps In): COLOR
+{ return PreviewCoverage(In, 15); }
+float4 PreviewCoverage16(vs2ps In): COLOR
+{ return PreviewCoverage(In, 16); }
 
 float4 ProjectorPosition(int iProjector, float4 PosW)
 {
@@ -180,7 +215,7 @@ int ProjectorIndex(int iProjector, float4 PosW)
 	DepthMapCd.y = 1.0f - DepthMapCd.y;
 	
 	DepthMapCd.x += iProjector;
-	DepthMapCd.x /= float(PROJECTOR_COUNT);
+	DepthMapCd.x /= float(ProjectorCount);
 	
 	float DepthMapValue = tex2D(SampDepth, DepthMapCd).r;
 	
@@ -194,7 +229,7 @@ int ProjectorIndex(int iProjector, float4 PosW)
 int4 PSScanPreview(vs2ps In) : COLOR
 {
 	int4 output = 0;
-	if (PROJECTOR_COUNT >= 3)
+	if (ProjectorCount >= 3)
 	{
 		output.x = ProjectorIndex(0, In.PosW);
 		output.y = ProjectorIndex(1, In.PosW);
@@ -228,13 +263,163 @@ float4 PSProjector1XYZ(vs2ps In) : COLOR
 // TECHNIQUES:
 // --------------------------------------------------------------------------------------------------
 
-technique TProjectShadows
+technique TProjectShadows1
 {
     pass P0
     {
         //Wrap0 = U;  // useful when mesh is round like a sphere
         VertexShader = compile vs_3_0 VS();
-        PixelShader = compile ps_3_0 PreviewCoverage();
+        PixelShader = compile ps_3_0 PreviewCoverage1();
+    }
+}
+
+technique TProjectShadows2
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage2();
+    }
+}
+
+technique TProjectShadows3
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage3();
+    }
+}
+
+technique TProjectShadows4
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage4();
+    }
+}
+
+technique TProjectShadows5
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage5();
+    }
+}
+
+technique TProjectShadows6
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage6();
+    }
+}
+
+technique TProjectShadows7
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage7();
+    }
+}
+
+technique TProjectShadows8
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage8();
+    }
+}
+
+technique TProjectShadows9
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage9();
+    }
+}
+
+technique TProjectShadows10
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage10();
+    }
+}
+
+technique TProjectShadows11
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage11();
+    }
+}
+
+technique TProjectShadows12
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage12();
+    }
+}
+
+technique TProjectShadows13
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage13();
+    }
+}
+
+technique TProjectShadows14
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage14();
+    }
+}
+
+technique TProjectShadows15
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage15();
+    }
+}
+
+technique TProjectShadows16
+{
+    pass P0
+    {
+        //Wrap0 = U;  // useful when mesh is round like a sphere
+        VertexShader = compile vs_3_0 VS();
+        PixelShader = compile ps_3_0 PreviewCoverage16();
     }
 }
 
