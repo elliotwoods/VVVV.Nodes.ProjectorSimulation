@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\lib\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)">
-   <BOUNDS height="6870" left="0" top="8460" type="Window" width="14340">
+   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)">
+   <BOUNDS height="6870" left="0" top="8460" type="Window" width="15960">
    </BOUNDS>
    <NODE componentmode="InABox" id="6" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="1530" top="5505" type="Node" width="100">
@@ -53,7 +53,7 @@
    </BOUNDS>
    <PIN pinname="Transform In 1" visible="1">
    </PIN>
-   <PIN pinname="Transform In 2" visible="1">
+   <PIN pinname="Transform In 2" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -149,7 +149,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="24" nodename="Divide (Value)" systemname="Divide (Value)">
-   <BOUNDS height="100" left="9150" top="3690" type="Node" width="100">
+   <BOUNDS height="100" left="7740" top="3690" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -177,10 +177,10 @@
    </PIN>
    <PIN pinname="Far Plane">
    </PIN>
+   <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
    <LINK dstnodeid="29" dstpinname="Relative To Distance" srcnodeid="21" srcpinname="Y Output Value">
-   </LINK>
-   <LINK dstnodeid="12" dstpinname="Transform In 2" srcnodeid="29" srcpinname="Transform Out">
    </LINK>
    <NODE componentmode="InABox" id="32" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
    <BOUNDS height="100" left="12060" top="270" type="Node" width="100">
@@ -211,13 +211,13 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="24" dstpinname="Input 2" linkstyle="VHV" srcnodeid="22" srcpinname="Y Output Value">
-   <LINKPOINT x="10995" y="2100">
+   <LINKPOINT x="10525" y="2100">
    </LINKPOINT>
-   <LINKPOINT x="9435" y="2100">
+   <LINKPOINT x="8495" y="2100">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" id="39" nodename="Divide (Value)" systemname="Divide (Value)">
-   <BOUNDS height="100" left="7755" top="3690" type="Node" width="100">
+   <BOUNDS height="100" left="9150" top="3690" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -262,12 +262,8 @@
    <LINKPOINT x="7080" y="3038">
    </LINKPOINT>
    </LINK>
-   <LINK dstnodeid="29" dstpinname="Top" srcnodeid="39" srcpinname="Output">
-   </LINK>
-   <LINK dstnodeid="29" dstpinname="Bottom" srcnodeid="24" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="42" nodename="Subtract (Value)" systemname="Subtract (Value)">
-   <BOUNDS height="100" left="7740" top="3060" type="Node" width="100">
+   <BOUNDS height="100" left="9135" top="3060" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -279,13 +275,13 @@
    <LINK dstnodeid="39" dstpinname="Input" srcnodeid="42" srcpinname="Output">
    </LINK>
    <LINK dstnodeid="39" dstpinname="Input 2" linkstyle="VHV" srcnodeid="22" srcpinname="Y Output Value">
-   <LINKPOINT x="10980" y="2093">
+   <LINKPOINT x="11445" y="2093">
    </LINKPOINT>
-   <LINKPOINT x="8070" y="2093">
+   <LINKPOINT x="9000" y="2093">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="Hidden" id="44" nodename="Add (Value)" systemname="Add (Value)">
-   <BOUNDS height="100" left="9135" top="3060" type="Node" width="100">
+   <BOUNDS height="100" left="7725" top="3060" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -297,15 +293,15 @@
    <LINK dstnodeid="24" dstpinname="Input" srcnodeid="44" srcpinname="Output">
    </LINK>
    <LINK dstnodeid="42" dstpinname="Input 1" linkstyle="Bezier" srcnodeid="36" srcpinname="Y">
-   <LINKPOINT x="12630" y="2723">
+   <LINKPOINT x="12570" y="2723">
    </LINKPOINT>
-   <LINKPOINT x="7800" y="2723">
+   <LINKPOINT x="9195" y="2723">
    </LINKPOINT>
    </LINK>
    <LINK dstnodeid="44" dstpinname="Input 1" linkstyle="Bezier" srcnodeid="36" srcpinname="Y">
-   <LINKPOINT x="12630" y="2723">
+   <LINKPOINT x="12570" y="2723">
    </LINKPOINT>
-   <LINKPOINT x="9195" y="2723">
+   <LINKPOINT x="7785" y="2723">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="45">
@@ -425,5 +421,11 @@
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="32" srcpinname="Y Output Value" dstnodeid="36" dstpinname="XY">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Transform Out" dstnodeid="12" dstpinname="Transform In 2">
+   </LINK>
+   <LINK srcnodeid="24" srcpinname="Output" dstnodeid="29" dstpinname="Top">
+   </LINK>
+   <LINK srcnodeid="39" srcpinname="Output" dstnodeid="29" dstpinname="Bottom">
    </LINK>
    </PATCH>

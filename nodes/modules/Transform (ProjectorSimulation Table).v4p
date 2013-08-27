@@ -17,6 +17,8 @@
    </PIN>
    <PIN pinname="Lens offset XY" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="0" top="8460" width="15960" height="6870">
+   </BOUNDS>
    </NODE>
    <NODE systemname="AsValue (Table Value)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.Table.dll" nodename="AsValue (Table Value)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="3435" top="750" width="100" height="100">
@@ -185,7 +187,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="16755" top="210" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="8">
+   <PIN pinname="Y Input Value" slicecount="1" values="16">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
