@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p" systemname="main" filename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p">
-   <BOUNDS type="Window" left="8865" top="225" width="13380" height="16155">
+   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p" systemname="main" filename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p">
+   <BOUNDS type="Window" left="2565" top="7230" width="13380" height="16155">
    </BOUNDS>
    <NODE systemname="Transform (ProjectorSimulation)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\Transform (ProjectorSimulation).v4p" nodename="Transform (ProjectorSimulation)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="465" top="3495" width="9795" height="270">
@@ -103,7 +103,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="6030" top="2430" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" values="1.3333,1.3333" visible="1">
+   <PIN pinname="Y Input Value" slicecount="2" visible="1" values="1.3333,1.3333">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="w:h">
    </PIN>
@@ -279,7 +279,7 @@
    </PIN>
    </NODE>
    <NODE systemname="PreviewCoverage (ProjectorSimulation EX9.Effect)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\PreviewCoverage (ProjectorSimulation EX9.Effect).v4p" nodename="PreviewCoverage (ProjectorSimulation EX9.Effect)" componentmode="Hidden" id="26">
-   <BOUNDS type="Node" left="915" top="8805" width="7905" height="270">
+   <BOUNDS type="Node" left="915" top="8805" width="9000" height="270">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -302,14 +302,14 @@
    </LINK>
    <LINK srcnodeid="13" srcpinname="Mesh" dstnodeid="26" dstpinname="Mesh">
    </LINK>
-   <LINK srcnodeid="1" srcpinname="ViewProjection transform" dstnodeid="26" dstpinname="ViewProjection Transform" linkstyle="VHV">
+   <LINK srcnodeid="1" srcpinname="ViewProjection transform" dstnodeid="26" dstpinname="ViewProjection Transform" linkstyle="VHV" hiddenwhenlocked="1">
    <LINKPOINT x="495" y="4540">
    </LINKPOINT>
    <LINKPOINT x="4305" y="4760">
    </LINKPOINT>
    </LINK>
    <NODE systemname="RenderDepthMap (ProjectorSimulation EX9.Geometry)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\RenderDepthMap (ProjectorSimulation EX9.Geometry).v4p" nodename="RenderDepthMap (ProjectorSimulation EX9.Geometry)" componentmode="Hidden" id="23">
-   <BOUNDS type="Node" left="5400" top="7545" width="5235" height="270">
+   <BOUNDS type="Node" left="5400" top="7545" width="6045" height="270">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -333,9 +333,9 @@
    <LINK srcnodeid="23" srcpinname="DepthMap Texture" dstnodeid="26" dstpinname="Depth Map">
    </LINK>
    <LINK srcnodeid="13" srcpinname="Mesh" dstnodeid="23" dstpinname="Mesh" linkstyle="Bezier">
-   <LINKPOINT x="2105" y="7218">
+   <LINKPOINT x="2100" y="7193">
    </LINKPOINT>
-   <LINKPOINT x="5395" y="7168">
+   <LINKPOINT x="5400" y="7193">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="26" dstpinname="ProjectorResolution XY" linkstyle="Bezier">
@@ -543,17 +543,17 @@
    <LINK srcnodeid="15" srcpinname="Transform Out" dstnodeid="26" dstpinname="Transform">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Transform Out" dstnodeid="23" dstpinname="Transform" linkstyle="Bezier">
-   <LINKPOINT x="3215" y="7218">
+   <LINKPOINT x="3210" y="7193">
    </LINKPOINT>
-   <LINKPOINT x="6685" y="7168">
+   <LINKPOINT x="6900" y="7193">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="39" srcpinname="Y Output Value" dstnodeid="15" dstpinname="TranslateX">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="41" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4425" top="6135" width="795" height="240">
+   <BOUNDS type="Box" left="4425" top="5685" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4425" top="6135" width="0" height="0">
+   <BOUNDS type="Node" left="4425" top="5685" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="0.16">
    </PIN>
@@ -565,9 +565,9 @@
    <LINK srcnodeid="41" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Yaw">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4095" top="5835" width="795" height="240">
+   <BOUNDS type="Box" left="4095" top="5985" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4095" top="5835" width="0" height="0">
+   <BOUNDS type="Node" left="4095" top="5985" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="1.64">
    </PIN>
@@ -578,9 +578,17 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="15" dstpinname="ScaleX">
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="15" dstpinname="ScaleX" linkstyle="VHV">
+   <LINKPOINT x="4080" y="6405">
+   </LINKPOINT>
+   <LINKPOINT x="3840" y="6405">
+   </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="15" dstpinname="ScaleY">
+   <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="15" dstpinname="ScaleY" linkstyle="VHV">
+   <LINKPOINT x="4095" y="6413">
+   </LINKPOINT>
+   <LINKPOINT x="3975" y="6413">
+   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="15" dstpinname="ScaleZ">
    </LINK>

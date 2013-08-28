@@ -34,6 +34,15 @@ sampler SampDepth = sampler_state    //sampler for doing the texture-lookup
     MagFilter = NONE;
 };
 
+texture TexImage <string uiname="Image";>;
+sampler SampImage = sampler_state    //sampler for doing the texture-lookup
+{
+    Texture   = (TexImage);          //apply a texture to the sampler
+    MipFilter = NONE;         //sampler states
+    MinFilter = NONE;
+    MagFilter = NONE;
+};
+
 //the data structure: vertexshader to pixelshader
 //used as output data with the VS function
 //and as input data with the PS function
@@ -98,12 +107,12 @@ vs2ps VS(
 float4x4 tProjector[MAX_PROJECTOR_COUNT];
 int2 ProjectorResolution = {1024, 768};
 float threshold = 0.001;
-float brightness = 5;
+float brightness[MAX_PROJECTOR_COUNT];
 float Alpha = 1.0f;
 bool applyFade = true;
 bool applyNormals = true;
 
-float testProjector(int i, vs2ps input, int projectorCount)
+float3 applyProjector(int i, vs2ps input, int projectorCount)
 {
 	float4 PosProjector = mul(input.PosW, tProjector[i]);
 	float Depth = PosProjector.z;
@@ -137,12 +146,12 @@ float testProjector(int i, vs2ps input, int projectorCount)
 		value *= clamp(abs(normalize(mul(input.NormW, tProjector[i])).z), 0, 1);
 	}
 	
-	value *= brightness;
+	value *= brightness[i];
 	
 	//test inside
 	value *= abs(PosProjector.x) < 1.0f && abs(PosProjector.y) < 1.0f;	
 	
-	return value;
+	return value * tex2D(SampImage, DepthMapCd).rgb;
 }
 
 float4 PreviewCoverage(vs2ps In, int projectorCount): COLOR
@@ -152,10 +161,9 @@ float4 PreviewCoverage(vs2ps In, int projectorCount): COLOR
 	col.rgb = 0;
 	
 	for (int i=0; i<projectorCount; i++)
-		col.b += testProjector(i, In, projectorCount);
+		col.rgb += applyProjector(i, In, projectorCount);
 	
 	float4 Light = lAmb + In.Diffuse + In.Specular;
-	Light.b = 0.0f;
 	
 	float4 result = col + Light;
 	result.a *= Alpha;

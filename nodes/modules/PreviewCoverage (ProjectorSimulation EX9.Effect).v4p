@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\lib\nodes\modules\PreviewCoverage (ProjectorSimulation EX9.Effect).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\PreviewCoverage (ProjectorSimulation Simple).v4p" systemname="PreviewCoverage (ProjectorSimulation Simple)">
-   <BOUNDS height="5400" left="4710" top="6405" type="Window" width="13785">
+   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation EX9.Effect).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\PreviewCoverage (ProjectorSimulation Simple).v4p" systemname="PreviewCoverage (ProjectorSimulation Simple)">
+   <BOUNDS height="6015" left="11370" top="3525" type="Window" width="14985">
    </BOUNDS>
    <NODE componentmode="InABox" id="2" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="4425" top="270" type="Node" width="100">
@@ -13,9 +13,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="1" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="1230" top="270" type="Node" width="0">
+   <BOUNDS height="0" left="1200" top="270" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="1230" top="270" type="Box" width="795">
+   <BOUNDS height="240" left="1200" top="270" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -25,9 +25,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="1725" top="795" type="Node" width="0">
+   <BOUNDS height="0" left="1650" top="795" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="1725" top="795" type="Box" width="795">
+   <BOUNDS height="240" left="1650" top="795" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -37,7 +37,7 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" filename="effects\TestShadows.fx" id="4" nodename="TestShadows (EX9.Effect)" systemname="TestShadows (EX9.Effect)">
-   <BOUNDS height="270" left="735" top="3705" type="Node" width="8775">
+   <BOUNDS height="270" left="735" top="3660" type="Node" width="8775">
    </BOUNDS>
    <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
    </PIN>
@@ -49,25 +49,29 @@
    </PIN>
    <PIN pinname="fudge">
    </PIN>
-   <PIN pinname="threshold" slicecount="1" values="0.01">
+   <PIN pinname="threshold" slicecount="1" values="0.02">
    </PIN>
    <PIN pinname="fudge2">
    </PIN>
    <PIN pinname="Light Direction XYZ">
    </PIN>
-   <PIN pinname="Ambient Color" slicecount="1" values="|0.03942,0.03942,0.03942,1.00000|">
+   <PIN pinname="Ambient Color" slicecount="1" values="|0.03942,0.03942,0.00000,1.00000|" visible="1">
    </PIN>
-   <PIN pinname="Diffuse Color" slicecount="1" values="|0.29328,0.29328,0.29328,1.00000|">
+   <PIN pinname="Diffuse Color" slicecount="1" values="|0.29328,0.29328,0.00000,1.00000|" visible="1">
    </PIN>
    <PIN pinname="Render State" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Alpha">
    </PIN>
-   <PIN pinname="brightness">
+   <PIN pinname="brightness" visible="1">
    </PIN>
    <PIN pinname="Technique" slicecount="1" visible="1" values="| TDataSetPreview|">
    </PIN>
    <PIN pinname="ProjectorCount" visible="1">
+   </PIN>
+   <PIN pinname="Image" visible="1">
+   </PIN>
+   <PIN pinname="Specular Color" visible="1" slicecount="1" values="|0.35000,0.35000,0.00000,1.00000|">
    </PIN>
    </NODE>
    <LINK dstnodeid="4" dstpinname="Mesh" srcnodeid="1" srcpinname="Output Node">
@@ -97,15 +101,15 @@
    </PIN>
    </NODE>
    <LINK dstnodeid="4" dstpinname="Depth Map" linkstyle="VHV" srcnodeid="6" srcpinname="Output Node">
-   <LINKPOINT x="5340" y="1710">
+   <LINKPOINT x="5340" y="1695">
    </LINKPOINT>
-   <LINKPOINT x="3360" y="2460">
+   <LINKPOINT x="3360" y="2430">
    </LINKPOINT>
    </LINK>
    <NODE componentmode="InABox" id="7" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
-   <BOUNDS height="0" left="3645" top="1365" type="Node" width="0">
+   <BOUNDS height="0" left="3495" top="1365" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="720" left="3645" top="1365" type="Box" width="795">
+   <BOUNDS height="720" left="3495" top="1365" type="Box" width="795">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="3" values="0.19,-0.11,0.03">
    </PIN>
@@ -133,9 +137,9 @@
    <LINK srcnodeid="8" srcpinname="Output Node" dstnodeid="4" dstpinname="Render State">
    </LINK>
    <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="4" dstpinname="tProjector" linkstyle="Bezier">
-   <LINKPOINT x="4485" y="2093">
+   <LINKPOINT x="4455" y="2093">
    </LINKPOINT>
-   <LINKPOINT x="7980" y="2093">
+   <LINKPOINT x="5115" y="2078">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="9" systemname="IOBox (Value Advanced)">
@@ -167,15 +171,13 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" encoded="0" values="brightness">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="4" dstpinname="brightness" linkstyle="VHV">
-   <LINKPOINT x="7305" y="2430">
-   </LINKPOINT>
-   <LINKPOINT x="5610" y="2430">
-   </LINKPOINT>
    </LINK>
    <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="11">
-   <BOUNDS type="Node" left="8505" top="2280" width="100" height="100">
+   <BOUNDS type="Node" left="8550" top="2280" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -183,13 +185,13 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="11" dstpinname="Input" linkstyle="Bezier">
-   <LINKPOINT x="4485" y="1380">
+   <LINKPOINT x="4500" y="1380">
    </LINKPOINT>
-   <LINKPOINT x="8505" y="1380">
+   <LINKPOINT x="8535" y="1380">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Subtract (Value)" nodename="Subtract (Value)" componentmode="Hidden" id="12">
-   <BOUNDS type="Node" left="8490" top="2865" width="100" height="100">
+   <BOUNDS type="Node" left="8535" top="2865" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input 1" visible="1">
    </PIN>
@@ -201,7 +203,7 @@
    <LINK srcnodeid="11" srcpinname="Count" dstnodeid="12" dstpinname="Input 1">
    </LINK>
    <NODE systemname="Ord2Enum (Enumerations)" nodename="Ord2Enum (Enumerations)" componentmode="Hidden" id="13">
-   <BOUNDS type="Node" left="8490" top="3225" width="100" height="100">
+   <BOUNDS type="Node" left="8535" top="3225" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Enum" visible="1">
    </PIN>
@@ -213,11 +215,11 @@
    <LINK srcnodeid="12" srcpinname="Output" dstnodeid="13" dstpinname="Ord Value">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="14" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="10185" top="390" width="10455" height="270">
+   <BOUNDS type="Node" left="11205" top="1125" width="10455" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="10185" top="390" width="3150" height="4200">
+   <BOUNDS type="Box" left="11205" top="1125" width="3150" height="4200">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|NOTE: If you have more than 16 projectors, then you need to make code changes to the projector (check techniques at bottom of the shader in this patch as a starting point)|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|NOTE: If you have more than 16 projectors, then you need to make code changes to TestShadows.fx (check techniques at bottom of the shader in this patch as a starting point)|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -229,9 +231,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="11" srcpinname="Count" dstnodeid="4" dstpinname="ProjectorCount" linkstyle="Bezier">
-   <LINKPOINT x="8490" y="3120">
+   <LINKPOINT x="8520" y="3105">
    </LINKPOINT>
-   <LINKPOINT x="7575" y="3120">
+   <LINKPOINT x="7590" y="3090">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="15" systemname="IOBox (Value Advanced)">
@@ -255,9 +257,101 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="15" srcpinname="Y Output Value" dstnodeid="4" dstpinname="ProjectorResolution XY" linkstyle="Bezier">
-   <LINKPOINT x="8505" y="2213">
+   <LINKPOINT x="8490" y="2205">
    </LINKPOINT>
-   <LINKPOINT x="4665" y="2213">
+   <LINKPOINT x="5640" y="2190">
    </LINKPOINT>
    </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="16" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="9840" top="255" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9840" top="255" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Image Signal|">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Info (EX9.Texture)" nodename="Info (EX9.Texture)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="10770" top="795" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Texture" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output Node" dstnodeid="17" dstpinname="Texture" linkstyle="VHV">
+   <LINKPOINT x="9900" y="630">
+   </LINKPOINT>
+   <LINKPOINT x="10770" y="630">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="DynamicTexture (EX9.Texture Value)" nodename="DynamicTexture (EX9.Texture Value)" componentmode="Hidden" id="18">
+   <BOUNDS type="Node" left="9510" top="1185" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Width" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Height" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Red" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Green" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Texture Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Switch (Node Input)" nodename="Switch (Node Input)" componentmode="Hidden" id="19">
+   <BOUNDS type="Node" left="9180" top="1665" width="720" height="270">
+   </BOUNDS>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GT (Value)" nodename="GT (Value)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="10770" top="1185" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Width" dstnodeid="20" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="19" dstpinname="Switch" linkstyle="VHV">
+   <LINKPOINT x="10770" y="1545">
+   </LINKPOINT>
+   <LINKPOINT x="9240" y="1545">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="18" srcpinname="Texture Out" dstnodeid="19" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="Output Node" dstnodeid="19" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="19" srcpinname="Output" dstnodeid="4" dstpinname="Image" linkstyle="Bezier">
+   <LINKPOINT x="9180" y="2790">
+   </LINKPOINT>
+   <LINKPOINT x="4920" y="2775">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="21" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="9330" top="1980" width="1455" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9330" top="1980" width="1455" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|//no signal is blue|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="String">
+   </PIN>
+   </NODE>
    </PATCH>
