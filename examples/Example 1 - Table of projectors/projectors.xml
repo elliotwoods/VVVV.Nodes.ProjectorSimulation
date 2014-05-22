@@ -1,29 +1,16 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <SpreadTable>
-    <PositionX>0</PositionX>
+    <PositionX>-2.16</PositionX>
     <_x0020_PositionY>0</_x0020_PositionY>
-    <_x0020_PositionZ>0</_x0020_PositionZ>
+    <_x0020_PositionZ>-1.45</_x0020_PositionZ>
     <_x0020_RotationX>0</_x0020_RotationX>
-    <_x0020_RotationY>0</_x0020_RotationY>
+    <_x0020_RotationY>0.16999999999999998</_x0020_RotationY>
     <_x0020_RotationZ>0</_x0020_RotationZ>
-    <_x0020_Throw_x0020_Ratio>0</_x0020_Throw_x0020_Ratio>
-    <_x0020_Width>0</_x0020_Width>
-    <_x0020_Height>0</_x0020_Height>
+    <_x0020_Throw_x0020_Ratio>1.8</_x0020_Throw_x0020_Ratio>
+    <_x0020_Width>1920</_x0020_Width>
+    <_x0020_Height>1080</_x0020_Height>
     <_x0020_Lens_x0020_Shift_x0020_X>0</_x0020_Lens_x0020_Shift_x0020_X>
-    <_x0020_Lens_x0020_Shift_x0020_Y>0</_x0020_Lens_x0020_Shift_x0020_Y>
-  </SpreadTable>
-  <SpreadTable>
-    <PositionX>0</PositionX>
-    <_x0020_PositionY>0</_x0020_PositionY>
-    <_x0020_PositionZ>0</_x0020_PositionZ>
-    <_x0020_RotationX>0</_x0020_RotationX>
-    <_x0020_RotationY>0</_x0020_RotationY>
-    <_x0020_RotationZ>0</_x0020_RotationZ>
-    <_x0020_Throw_x0020_Ratio>0</_x0020_Throw_x0020_Ratio>
-    <_x0020_Width>0</_x0020_Width>
-    <_x0020_Height>0</_x0020_Height>
-    <_x0020_Lens_x0020_Shift_x0020_X>0</_x0020_Lens_x0020_Shift_x0020_X>
-    <_x0020_Lens_x0020_Shift_x0020_Y>0</_x0020_Lens_x0020_Shift_x0020_Y>
+    <_x0020_Lens_x0020_Shift_x0020_Y>0.5</_x0020_Lens_x0020_Shift_x0020_Y>
   </SpreadTable>
 </DocumentElement>
