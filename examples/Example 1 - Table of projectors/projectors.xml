@@ -1,29 +1,29 @@
 <?xml version="1.0" standalone="yes"?>
 <DocumentElement>
   <SpreadTable>
-    <Position_x0020_X_x0020__x0028_m_x0029_>1</Position_x0020_X_x0020__x0028_m_x0029_>
-    <Position_x0020_Y_x0020__x0028_m_x0029_>0</Position_x0020_Y_x0020__x0028_m_x0029_>
-    <Position_x0020_Z_x0020__x0028_m_x0029_>-1.2899999999999998</Position_x0020_Z_x0020__x0028_m_x0029_>
-    <Rotation_x0020_X>0</Rotation_x0020_X>
-    <Rotation_x0020_Y>-0.060000000000000026</Rotation_x0020_Y>
-    <Rotation_x0020_Z>0</Rotation_x0020_Z>
-    <Throw_x0020_Ratio>1.4</Throw_x0020_Ratio>
-    <_x0020_Width_x0020__x0028_px_x0029_>1920</_x0020_Width_x0020__x0028_px_x0029_>
-    <_x0020_Height_x0020__x0028_px_x0029_>1080</_x0020_Height_x0020__x0028_px_x0029_>
-    <_x0020_Lens_x0020_Offset_x0020_X>0</_x0020_Lens_x0020_Offset_x0020_X>
-    <_x0020_Lens_x0020_Offset_x0020_Y>0.5</_x0020_Lens_x0020_Offset_x0020_Y>
+    <PositionX>0</PositionX>
+    <_x0020_PositionY>0</_x0020_PositionY>
+    <_x0020_PositionZ>0</_x0020_PositionZ>
+    <_x0020_RotationX>0</_x0020_RotationX>
+    <_x0020_RotationY>0</_x0020_RotationY>
+    <_x0020_RotationZ>0</_x0020_RotationZ>
+    <_x0020_Throw_x0020_Ratio>0</_x0020_Throw_x0020_Ratio>
+    <_x0020_Width>0</_x0020_Width>
+    <_x0020_Height>0</_x0020_Height>
+    <_x0020_Lens_x0020_Shift_x0020_X>0</_x0020_Lens_x0020_Shift_x0020_X>
+    <_x0020_Lens_x0020_Shift_x0020_Y>0</_x0020_Lens_x0020_Shift_x0020_Y>
   </SpreadTable>
   <SpreadTable>
-    <Position_x0020_X_x0020__x0028_m_x0029_>-1</Position_x0020_X_x0020__x0028_m_x0029_>
-    <Position_x0020_Y_x0020__x0028_m_x0029_>0</Position_x0020_Y_x0020__x0028_m_x0029_>
-    <Position_x0020_Z_x0020__x0028_m_x0029_>-1.29</Position_x0020_Z_x0020__x0028_m_x0029_>
-    <Rotation_x0020_X>0</Rotation_x0020_X>
-    <Rotation_x0020_Y>0</Rotation_x0020_Y>
-    <Rotation_x0020_Z>0</Rotation_x0020_Z>
-    <Throw_x0020_Ratio>1.4</Throw_x0020_Ratio>
-    <_x0020_Width_x0020__x0028_px_x0029_>1920</_x0020_Width_x0020__x0028_px_x0029_>
-    <_x0020_Height_x0020__x0028_px_x0029_>1080</_x0020_Height_x0020__x0028_px_x0029_>
-    <_x0020_Lens_x0020_Offset_x0020_X>0</_x0020_Lens_x0020_Offset_x0020_X>
-    <_x0020_Lens_x0020_Offset_x0020_Y>0.5</_x0020_Lens_x0020_Offset_x0020_Y>
+    <PositionX>0</PositionX>
+    <_x0020_PositionY>0</_x0020_PositionY>
+    <_x0020_PositionZ>0</_x0020_PositionZ>
+    <_x0020_RotationX>0</_x0020_RotationX>
+    <_x0020_RotationY>0</_x0020_RotationY>
+    <_x0020_RotationZ>0</_x0020_RotationZ>
+    <_x0020_Throw_x0020_Ratio>0</_x0020_Throw_x0020_Ratio>
+    <_x0020_Width>0</_x0020_Width>
+    <_x0020_Height>0</_x0020_Height>
+    <_x0020_Lens_x0020_Shift_x0020_X>0</_x0020_Lens_x0020_Shift_x0020_X>
+    <_x0020_Lens_x0020_Shift_x0020_Y>0</_x0020_Lens_x0020_Shift_x0020_Y>
   </SpreadTable>
 </DocumentElement>

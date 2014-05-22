@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
-   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 1 - Table of projectors\main.v4p" systemname="main" filename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p">
-   <BOUNDS type="Window" left="3300" top="5670" width="12855" height="17670">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha32.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 1 - Table of projectors\main.v4p" systemname="main" filename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p">
+   <BOUNDS type="Window" left="4440" top="2508" width="12852" height="17664">
    </BOUNDS>
    <NODE systemname="Preview (ProjectorSimulation DX9)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\Preview (ProjectorSimulation DX9).v4p" nodename="Preview (ProjectorSimulation DX9)" componentmode="Hidden" id="8">
    <BOUNDS type="Node" left="465" top="7485" width="100" height="100">
@@ -311,6 +311,12 @@
    </PIN>
    <PIN pinname="Load" visible="1">
    </PIN>
+   <PIN pinname="Table" visible="1">
+   </PIN>
+   <PIN pinname="Auto Save" visible="1">
+   </PIN>
+   <PIN pinname="Column Names" slicecount="1" values="|PositionX, PositionY, PositionZ, RotationX, RotationY, RotationZ, Throw Ratio, Width, Height, Lens Shift X, Lens Shift Y|">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="45" systemname="IOBox (String)">
    <BOUNDS type="Node" left="285" top="1335" width="4020" height="270">
@@ -329,33 +335,25 @@
    <NODE systemname="TableView (Table)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.Table.dll" nodename="TableView (Table)" componentmode="InABox" id="46">
    <BOUNDS type="Node" left="17970" top="12795" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Table" visible="1">
+   <PIN pinname="Table" visible="1" slicecount="1" values="||">
    </PIN>
    <BOUNDS type="Box" width="12045" height="2370" left="450" top="3135">
    </BOUNDS>
    <PIN pinname="Index" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="44" srcpinname="SpreadTable" dstnodeid="46" dstpinname="Table" linkstyle="VHV">
-   <LINKPOINT x="4560" y="2993">
-   </LINKPOINT>
-   <LINKPOINT x="12900" y="2993">
-   </LINKPOINT>
-   </LINK>
-   <NODE systemname="Transform (ProjectorSimulation Table)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p" componentmode="Hidden" id="47" nodename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p">
+   <NODE systemname="Transform (ProjectorSimulation Table)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p" componentmode="InAWindow" id="47" nodename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p">
    <BOUNDS type="Node" left="465" top="5580" width="12045" height="270">
    </BOUNDS>
    <BOUNDS type="Box" left="465" top="5580" width="4800" height="3600">
    </BOUNDS>
-   <BOUNDS type="Window" left="5565" top="8955" width="18195" height="4530">
+   <BOUNDS type="Window" left="14220" top="10020" width="18192" height="4524">
    </BOUNDS>
-   <PIN pinname="Table" visible="1">
+   <PIN pinname="Table" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="ViewProjection transform" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="44" srcpinname="SpreadTable" dstnodeid="47" dstpinname="Table">
-   </LINK>
    <LINK srcnodeid="47" srcpinname="ViewProjection transform" dstnodeid="40" dstpinname="ViewProjection" linkstyle="VHV">
    <LINKPOINT x="495" y="6360">
    </LINKPOINT>
@@ -445,7 +443,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="5340" top="1380" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -456,6 +454,10 @@
    <PIN pinname="Behavior" slicecount="1" values="Toggle">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Auto save|">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Auto save">
@@ -488,4 +490,18 @@
    </LINK>
    <LINK srcnodeid="55" srcpinname="Bang" dstnodeid="56" dstpinname="Input 2">
    </LINK>
+   <LINK srcnodeid="44" srcpinname="Table" dstnodeid="46" dstpinname="Table" linkstyle="VHV">
+   <LINKPOINT x="4500" y="3006">
+   </LINKPOINT>
+   <LINKPOINT x="12444" y="3006">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="44" srcpinname="Table" dstnodeid="47" dstpinname="Table">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Auto Save">
+   </LINK>
+   <PACK Name="VVVV.Packs" Version="0.1.0">
+   </PACK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
    </PATCH>
