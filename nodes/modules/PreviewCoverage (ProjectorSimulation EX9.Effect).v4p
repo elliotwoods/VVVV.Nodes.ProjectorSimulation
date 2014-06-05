@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
-   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation EX9.Effect).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\PreviewCoverage (ProjectorSimulation Simple).v4p" systemname="PreviewCoverage (ProjectorSimulation Simple)">
-   <BOUNDS height="6015" left="11370" top="3525" type="Window" width="14985">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha32.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation EX9.Effect).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\PreviewCoverage (ProjectorSimulation Simple).v4p" systemname="PreviewCoverage (ProjectorSimulation Simple)">
+   <BOUNDS height="5400" left="4710" top="6405" type="Window" width="13785">
    </BOUNDS>
    <NODE componentmode="InABox" id="2" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="4425" top="270" type="Node" width="100">
@@ -49,15 +49,15 @@
    </PIN>
    <PIN pinname="fudge">
    </PIN>
-   <PIN pinname="threshold" slicecount="1" values="0.02">
+   <PIN pinname="threshold" slicecount="1" values="0.002">
    </PIN>
    <PIN pinname="fudge2">
    </PIN>
    <PIN pinname="Light Direction XYZ">
    </PIN>
-   <PIN pinname="Ambient Color" slicecount="1" values="|0.03942,0.03942,0.00000,1.00000|" visible="1">
+   <PIN pinname="Ambient Color" slicecount="1" visible="1" values="|0.03942,0.03942,0.00000,1.00000|">
    </PIN>
-   <PIN pinname="Diffuse Color" slicecount="1" values="|0.29328,0.29328,0.00000,1.00000|" visible="1">
+   <PIN pinname="Diffuse Color" slicecount="1" visible="1" values="|0.29328,0.29328,0.00000,1.00000|">
    </PIN>
    <PIN pinname="Render State" slicecount="1" values="||">
    </PIN>
@@ -354,4 +354,8 @@
    <PIN pinname="String Type" slicecount="1" values="String">
    </PIN>
    </NODE>
+   <PACK Name="VVVV.Packs" Version="0.1.0">
+   </PACK>
+   <PACK Name="addonpack" Version="31.9.0">
+   </PACK>
    </PATCH>
