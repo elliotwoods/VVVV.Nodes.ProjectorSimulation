@@ -1,4 +1,4 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p" systemname="Transform (ProjectorSimulation Table)" filename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p">
    <BOUNDS type="Window" left="5565" top="8955" width="18195" height="4530">
    </BOUNDS>
@@ -20,16 +20,10 @@
    <BOUNDS type="Window" left="0" top="8460" width="15960" height="6870">
    </BOUNDS>
    </NODE>
-   <NODE systemname="AsValue (Table Value)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.Table.dll" nodename="AsValue (Table Value)" componentmode="Hidden" id="1">
-   <BOUNDS type="Node" left="3435" top="750" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Unzip (Value)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Unzip (Value)" componentmode="Hidden" id="2">
    <BOUNDS type="Node" left="3420" top="1260" width="9705" height="270">
    </BOUNDS>
-   <PIN pinname="Input" visible="1">
+   <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Output Count" slicecount="1" values="11">
    </PIN>
@@ -56,8 +50,6 @@
    <PIN pinname="Output 7" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="2" dstpinname="Input">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="3" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="3450" top="210" width="795" height="240">
    </BOUNDS>
@@ -68,8 +60,6 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="Table">
    </PIN>
    </NODE>
-   <LINK srcnodeid="3" srcpinname="Output Node" dstnodeid="1" dstpinname="Table">
-   </LINK>
    <NODE systemname="Vector (3d Join)" nodename="Vector (3d Join)" componentmode="Hidden" id="4">
    <BOUNDS type="Node" left="3420" top="1755" width="1980" height="270">
    </BOUNDS>
@@ -219,5 +209,15 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="ViewProjection transform" dstnodeid="12" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="GetValues (Table Value)" filename="%VVVV%\addonpack\lib\nodes\plugins\VVVV.Nodes.Table.dll" nodename="GetValues (Table Value)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="3435" top="750" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="2" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output Node" dstnodeid="1" dstpinname="Table">
    </LINK>
    </PATCH>

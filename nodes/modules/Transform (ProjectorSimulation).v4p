@@ -1,4 +1,4 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
    <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)">
    <BOUNDS height="6870" left="0" top="8460" type="Window" width="15960">
    </BOUNDS>
@@ -7,7 +7,7 @@
    </BOUNDS>
    <BOUNDS height="240" left="1530" top="5505" type="Box" width="795">
    </BOUNDS>
-   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|ViewProjection transform|">
+   <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|ViewProjection Transform|">
    </PIN>
    <PIN pinname="Input Node" visible="1">
    </PIN>
