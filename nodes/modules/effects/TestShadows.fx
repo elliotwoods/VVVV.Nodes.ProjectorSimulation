@@ -166,6 +166,7 @@ float4 PreviewCoverage(vs2ps In, int projectorCount): COLOR
 	float4 Light = lAmb + In.Diffuse + In.Specular;
 	
 	float4 result = col + Light;
+	result.a = saturate(result.a);
 	result.a *= Alpha;
 	return result;
 }
