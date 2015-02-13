@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
-   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\ColorSpread (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\ColorSpread (ProjectorSimulation).v4p" systemname="ColorSpread (ProjectorSimulation)">
-   <BOUNDS height="6465" left="25095" top="12795" type="Window" width="9150">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_45beta33.7_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\ColorSpread (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\ColorSpread (ProjectorSimulation).v4p" systemname="ColorSpread (ProjectorSimulation)" scrollx="0" scrolly="-360">
+   <BOUNDS height="6460" left="12110" top="9630" type="Window" width="9150">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="735" top="465" type="Node" width="100">
@@ -23,9 +23,9 @@
    <LINK dstnodeid="1" dstpinname="Input" srcnodeid="0" srcpinname="Output Node">
    </LINK>
    <NODE componentmode="InABox" id="2" nodename="IOBox (Color)" systemname="IOBox (Color)">
-   <BOUNDS height="100" left="735" top="5010" type="Node" width="100">
+   <BOUNDS height="100" left="735" top="5410" type="Node" width="100">
    </BOUNDS>
-   <BOUNDS height="480" left="735" top="5010" type="Box" width="2250">
+   <BOUNDS height="480" left="735" top="5410" type="Box" width="2250">
    </BOUNDS>
    <PIN pinname="Color Input" visible="1">
    </PIN>
@@ -33,19 +33,19 @@
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="3" nodename="Switch (Color Input)" systemname="Switch (Color Input)">
-   <BOUNDS height="270" left="720" top="4365" type="Node" width="2100">
+   <BOUNDS height="270" left="720" top="4765" type="Node" width="2100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
    <PIN pinname="Switch" visible="1">
    </PIN>
-   <PIN pinname="Input 2" visible="1">
+   <PIN pinname="Input 2" visible="1" slicecount="4" values="|0.00000,0.25000,1.00000,1.00000|,|1.00000,0.00000,0.75000,1.00000|,|1.00000,0.75000,0.00000,1.00000|,|0.18591,1.00000,0.38944,1.00000|">
    </PIN>
    </NODE>
    <LINK dstnodeid="2" dstpinname="Color Input" srcnodeid="3" srcpinname="Output">
    </LINK>
    <NODE componentmode="Hidden" id="4" nodename="GT (Value)" systemname="GT (Value)">
-   <BOUNDS height="100" left="720" top="3825" type="Node" width="100">
+   <BOUNDS height="100" left="720" top="4225" type="Node" width="100">
    </BOUNDS>
    <PIN pinname="Output" visible="1">
    </PIN>
@@ -58,18 +58,6 @@
    </LINK>
    <LINK dstnodeid="4" dstpinname="Input 1" srcnodeid="1" srcpinname="Count">
    </LINK>
-   <NODE componentmode="Hidden" id="5" nodename="HSL (Color Join)" systemname="HSL (Color Join)">
-   <BOUNDS height="270" left="2775" top="3825" type="Node" width="2715">
-   </BOUNDS>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Hue" visible="1">
-   </PIN>
-   <PIN pinname="Lightness" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="3" dstpinname="Input 2" srcnodeid="5" srcpinname="Output">
-   </LINK>
    <NODE componentmode="Hidden" id="6" nodename="LinearSpread (Spreads)" systemname="LinearSpread (Spreads)">
    <BOUNDS height="100" left="2775" top="2385" type="Node" width="100">
    </BOUNDS>
@@ -78,8 +66,6 @@
    <PIN pinname="Spread Count" visible="1">
    </PIN>
    </NODE>
-   <LINK dstnodeid="5" dstpinname="Hue" srcnodeid="6" srcpinname="Output">
-   </LINK>
    <LINK dstnodeid="6" dstpinname="Spread Count" linkstyle="VHV" srcnodeid="1" srcpinname="Count">
    <LINKPOINT x="780" y="2123">
    </LINKPOINT>
@@ -105,7 +91,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="4515" top="450" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.5">
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -134,22 +120,8 @@
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
    </NODE>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="13" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5415" top="2835" width="795" height="240">
-   </BOUNDS>
-   <BOUNDS type="Node" left="5415" top="2835" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="SetSlice (Spreads)" nodename="SetSlice (Spreads)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="4530" top="3315" width="2715" height="270">
+   <BOUNDS type="Node" left="4530" top="3715" width="2715" height="270">
    </BOUNDS>
    <PIN pinname="Spread" visible="1">
    </PIN>
@@ -160,10 +132,6 @@
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="15" srcpinname="Output" dstnodeid="5" dstpinname="Lightness">
-   </LINK>
-   <LINK srcnodeid="13" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Input">
-   </LINK>
    <NODE systemname="LT (Value)" nodename="LT (Value)" componentmode="Hidden" id="17">
    <BOUNDS type="Node" left="7680" top="2385" width="100" height="100">
    </BOUNDS>
@@ -222,4 +190,48 @@
    </LINK>
    <LINK srcnodeid="19" srcpinname="Output" dstnodeid="15" dstpinname="Spread">
    </LINK>
+   <NODE systemname="LFO (Animation)" nodename="LFO (Animation)" componentmode="Hidden" id="20">
+   <BOUNDS type="Node" left="5430" top="2800" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Period" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="WaveShaper (Value)" nodename="WaveShaper (Value)" componentmode="Hidden" id="21">
+   <BOUNDS type="Node" left="5420" top="3160" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Shape" slicecount="1" values="Triangle">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Output" dstnodeid="15" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Output" dstnodeid="21" dstpinname="Input">
+   </LINK>
+   <NODE componentmode="Hidden" id="5" nodename="HSV (Color Join)" systemname="HSV (Color Join)">
+   <BOUNDS height="270" left="2775" top="4225" type="Node" width="2690">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Hue" visible="1">
+   </PIN>
+   <PIN pinname="Lightness" visible="1">
+   </PIN>
+   <PIN pinname="Value" visible="1">
+   </PIN>
+   <PIN pinname="Saturation" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="3" dstpinname="Input 2" srcnodeid="5" srcpinname="Output">
+   </LINK>
+   <LINK dstnodeid="5" dstpinname="Hue" srcnodeid="6" srcpinname="Output">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Output" dstnodeid="5" dstpinname="Value">
+   </LINK>
+   <PACK Name="addonpack" Version="33.7.0">
+   </PACK>
    </PATCH>

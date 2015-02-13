@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha31.1.dtd" >
-   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.1.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_45beta33.1_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)" scrollx="225" scrolly="0">
    <BOUNDS height="6870" left="0" top="8460" type="Window" width="15960">
    </BOUNDS>
    <NODE componentmode="InABox" id="6" nodename="IOBox (Node)" systemname="IOBox (Node)">
@@ -141,7 +141,7 @@
    </BOUNDS>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Aspect ratio|">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="1.3333">
+   <PIN pinname="Y Input Value" slicecount="1" values="1.77777777777778">
    </PIN>
    <PIN pinname="Y Output Value" visible="1">
    </PIN>
@@ -325,7 +325,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="14025" top="285" width="795" height="240">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.05">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.7">
    </PIN>
    <PIN pinname="Units" slicecount="1" encoded="0" values="||">
    </PIN>
@@ -428,4 +428,6 @@
    </LINK>
    <LINK srcnodeid="39" srcpinname="Output" dstnodeid="29" dstpinname="Bottom">
    </LINK>
+   <PACK Name="addonpack" Version="33.0.0">
+   </PACK>
    </PATCH>
