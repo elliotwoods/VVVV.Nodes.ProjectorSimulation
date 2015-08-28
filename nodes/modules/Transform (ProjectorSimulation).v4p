@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta33.7_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)" scrollx="225" scrolly="0">
+   <PATCH nodename="C:\vvvv\vvvv_45beta33.7_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)" scrollx="290" scrolly="0">
    <BOUNDS height="6870" left="0" top="8460" type="Window" width="15960">
    </BOUNDS>
    <NODE componentmode="InABox" id="6" nodename="IOBox (Node)" systemname="IOBox (Node)">
@@ -80,34 +80,18 @@
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="|Rotate XYZ|">
    </PIN>
    </NODE>
-   <NODE componentmode="Hidden" id="18" nodename="Rotate (Transform Vector)" systemname="Rotate (Transform Vector)">
-   <BOUNDS height="270" left="2370" top="1995" type="Node" width="2145">
-   </BOUNDS>
-   <PIN pinname="Transform In" visible="1">
-   </PIN>
-   <PIN pinname="Transform Out" visible="1">
-   </PIN>
-   <PIN pinname="XYZ" visible="1">
-   </PIN>
-   </NODE>
-   <LINK dstnodeid="18" dstpinname="Transform In" srcnodeid="7" srcpinname="Transform Out">
-   </LINK>
    <LINK dstnodeid="7" dstpinname="XYZ" srcnodeid="9" srcpinname="Y Output Value">
    </LINK>
    <NODE componentmode="Hidden" id="19" nodename="Inverse (Transform)" systemname="Inverse (Transform)">
    <BOUNDS height="100" left="1815" top="2580" type="Node" width="100">
    </BOUNDS>
-   <PIN pinname="Source" visible="1">
+   <PIN pinname="Source" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK dstnodeid="19" dstpinname="Source" srcnodeid="18" srcpinname="Transform Out">
-   </LINK>
-   <LINK dstnodeid="18" dstpinname="XYZ" srcnodeid="17" srcpinname="Y Output Value">
-   </LINK>
    <NODE componentmode="InABox" id="20" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="0" left="1545" top="270" type="Node" width="0">
    </BOUNDS>
@@ -457,5 +441,51 @@
    </LINKPOINT>
    <LINKPOINT x="5360" y="4900">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="Vector (3d Split)" nodename="Vector (3d Split)" componentmode="Hidden" id="54">
+   <BOUNDS type="Node" left="4440" top="1380" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ" visible="1">
+   </PIN>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Y Output Value" dstnodeid="54" dstpinname="XYZ">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="58">
+   <BOUNDS type="Node" left="4180" top="1880" width="850" height="270">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Transform Out" dstnodeid="58" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="59">
+   <BOUNDS type="Node" left="4180" top="2280" width="850" height="270">
+   </BOUNDS>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="58" srcpinname="Transform Out" dstnodeid="59" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Rotate (Transform)" nodename="Rotate (Transform)" componentmode="Hidden" id="60">
+   <BOUNDS type="Node" left="4180" top="2680" width="850" height="270">
+   </BOUNDS>
+   <PIN pinname="Z" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="60" srcpinname="Transform Out" dstnodeid="19" dstpinname="Source">
+   </LINK>
+   <LINK srcnodeid="59" srcpinname="Transform Out" dstnodeid="60" dstpinname="Transform In">
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="Z" dstnodeid="60" dstpinname="Z">
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="Y" dstnodeid="59" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="54" srcpinname="X" dstnodeid="58" dstpinname="X">
    </LINK>
    </PATCH>
