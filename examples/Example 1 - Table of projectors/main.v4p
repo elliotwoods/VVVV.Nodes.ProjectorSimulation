@@ -1,11 +1,11 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.1.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta33.1_x64\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 1 - Table of projectors\main.v4p" systemname="main" filename="C:\vvvv\vvvv_45beta33.1_x64\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 1 - Table of projectors\main.v4p" scrollx="0" scrolly="1110">
-   <BOUNDS type="Window" left="6720" top="420" width="16755" height="20955">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 1 - Table of projectors\main.v4p" systemname="main" filename="C:\vvvv\vvvv_45beta33.1_x64\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 1 - Table of projectors\main.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="6920" top="460" width="16530" height="18570">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.0.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE systemname="Preview (ProjectorSimulation DX9)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX9).v4p" nodename="Preview (ProjectorSimulation DX9)" componentmode="Hidden" id="8">
-   <BOUNDS type="Node" left="465" top="8235" width="100" height="100">
+   <BOUNDS type="Node" left="465" top="8635" width="100" height="100">
    </BOUNDS>
    <PIN pinname="ViewProjection In" visible="1">
    </PIN>
@@ -13,15 +13,15 @@
    </PIN>
    <PIN pinname="Color" visible="1">
    </PIN>
-   <BOUNDS type="Box" left="465" top="8235">
+   <BOUNDS type="Box" left="465" top="8635">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="9">
-   <BOUNDS type="Node" left="465" top="11220" width="100" height="100">
+   <BOUNDS type="Node" left="465" top="13020" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="465" top="11220" width="12060" height="4860">
+   <BOUNDS type="Box" left="465" top="13020" width="12060" height="4860">
    </BOUNDS>
    <BOUNDS type="Window" left="0" top="0" width="12765" height="8280">
    </BOUNDS>
@@ -43,13 +43,13 @@
    </PIN>
    </NODE>
    <NODE systemname="AxisAndGrid (DX9)" filename="%VVVV%\lib\nodes\modules\EX9\AxisAndGrid (DX9).v4p" nodename="AxisAndGrid (DX9)" componentmode="Hidden" id="10">
-   <BOUNDS type="Node" left="705" top="10380" width="100" height="100">
+   <BOUNDS type="Node" left="705" top="12180" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="11">
-   <BOUNDS type="Node" left="465" top="10740" width="750" height="270">
+   <BOUNDS type="Node" left="465" top="12540" width="750" height="270">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -66,14 +66,14 @@
    </LINK>
    <LINK srcnodeid="10" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 2">
    </LINK>
-   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="12">
-   <BOUNDS type="Node" left="9630" top="10740" width="100" height="100">
+   <NODE systemname="CAMERA (TRANSFORM SOFTIMAGE)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="9630" top="12540" width="100" height="100">
    </BOUNDS>
    <PIN pinname="View" visible="1">
    </PIN>
    <PIN pinname="Projection" visible="1">
    </PIN>
-   <PIN pinname="Inital Distance" slicecount="1" values="3">
+   <PIN pinname="Initial Distance" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Initial Pitch" slicecount="1" values="0.06">
    </PIN>
@@ -83,19 +83,19 @@
    <LINK srcnodeid="12" srcpinname="View" dstnodeid="9" dstpinname="View">
    </LINK>
    <LINK srcnodeid="12" srcpinname="Projection" dstnodeid="9" dstpinname="Projection" linkstyle="VHV">
-   <LINKPOINT x="9990" y="11100">
+   <LINKPOINT x="9990" y="12900">
    </LINKPOINT>
-   <LINKPOINT x="11085" y="11100">
+   <LINKPOINT x="11085" y="12900">
    </LINKPOINT>
    </LINK>
    <NODE systemname="Teapot (EX9.Geometry)" nodename="Teapot (EX9.Geometry)" componentmode="Hidden" id="13">
-   <BOUNDS type="Node" left="2040" top="8235" width="100" height="100">
+   <BOUNDS type="Node" left="2040" top="8635" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Mesh" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="16">
-   <BOUNDS type="Node" left="9240" top="15555" width="100" height="100">
+   <BOUNDS type="Node" left="9240" top="17055" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -109,13 +109,13 @@
    <LINK srcnodeid="9" srcpinname="Actual Backbuffer Width" dstnodeid="16" dstpinname="Aspect Width">
    </LINK>
    <LINK srcnodeid="9" srcpinname="Actual Backbuffer Height" dstnodeid="16" dstpinname="Aspect Height" linkstyle="VHV">
-   <LINKPOINT x="10925" y="15880">
+   <LINKPOINT x="10925" y="17581">
    </LINKPOINT>
-   <LINKPOINT x="9715" y="15680">
+   <LINKPOINT x="9715" y="17279">
    </LINKPOINT>
    </LINK>
    <NODE systemname="PreviewCoverage (ProjectorSimulation EX9.Effect)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation EX9.Effect).v4p" nodename="PreviewCoverage (ProjectorSimulation EX9.Effect)" componentmode="Hidden" id="26">
-   <BOUNDS type="Node" left="915" top="9855" width="9060" height="270">
+   <BOUNDS type="Node" left="915" top="11655" width="9060" height="270">
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
@@ -131,7 +131,7 @@
    </PIN>
    <BOUNDS type="Window" left="4710" top="6405" width="13785" height="5400">
    </BOUNDS>
-   <PIN pinname="ProjectorResolution XY" visible="1">
+   <PIN pinname="ProjectorResolution XY" visible="1" slicecount="2" values="0,0">
    </PIN>
    </NODE>
    <LINK srcnodeid="26" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 3">
@@ -139,7 +139,7 @@
    <LINK srcnodeid="13" srcpinname="Mesh" dstnodeid="26" dstpinname="Mesh">
    </LINK>
    <NODE systemname="RenderDepthMap (ProjectorSimulation EX9.Geometry)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\RenderDepthMap (ProjectorSimulation EX9.Geometry).v4p" nodename="RenderDepthMap (ProjectorSimulation EX9.Geometry)" componentmode="Hidden" id="23">
-   <BOUNDS type="Node" left="5400" top="8895" width="5235" height="270">
+   <BOUNDS type="Node" left="5410" top="9295" width="5235" height="270">
    </BOUNDS>
    <PIN pinname="Layers" visible="1">
    </PIN>
@@ -157,9 +157,9 @@
    <LINK srcnodeid="23" srcpinname="DepthMap Texture" dstnodeid="26" dstpinname="Depth Map">
    </LINK>
    <LINK srcnodeid="13" srcpinname="Mesh" dstnodeid="23" dstpinname="Mesh" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="2070" y="8990">
+   <LINKPOINT x="2073" y="9390">
    </LINKPOINT>
-   <LINKPOINT x="5430" y="8890">
+   <LINKPOINT x="5437" y="9290">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="29" systemname="IOBox (String)">
@@ -193,9 +193,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="39">
-   <BOUNDS type="Node" left="3315" top="7470" width="100" height="100">
+   <BOUNDS type="Node" left="3315" top="7870" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="3315" top="7470" width="645" height="405">
+   <BOUNDS type="Box" left="3315" top="7870" width="645" height="405">
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="2">
    </PIN>
@@ -209,7 +209,7 @@
    </PIN>
    </NODE>
    <NODE systemname="ColorSpread (ProjectorSimulation)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\ColorSpread (ProjectorSimulation).v4p" nodename="ColorSpread (ProjectorSimulation)" componentmode="Hidden" id="40">
-   <BOUNDS type="Node" left="855" top="7470" width="100" height="100">
+   <BOUNDS type="Node" left="655" top="7870" width="100" height="100">
    </BOUNDS>
    <PIN pinname="ViewProjection" visible="1">
    </PIN>
@@ -221,13 +221,13 @@
    </BOUNDS>
    <PIN pinname="Selection" visible="1" slicecount="1" values="0">
    </PIN>
-   <BOUNDS type="Box" left="855" top="7470">
+   <BOUNDS type="Box" left="655" top="7870">
    </BOUNDS>
    </NODE>
    <LINK srcnodeid="40" srcpinname="Output" dstnodeid="8" dstpinname="Color">
    </LINK>
    <NODE systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden" id="15">
-   <BOUNDS type="Node" left="3150" top="8235" width="100" height="100">
+   <BOUNDS type="Node" left="3150" top="8635" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
@@ -247,17 +247,17 @@
    <LINK srcnodeid="15" srcpinname="Transform Out" dstnodeid="26" dstpinname="Transform">
    </LINK>
    <LINK srcnodeid="15" srcpinname="Transform Out" dstnodeid="23" dstpinname="Transform" linkstyle="VHV">
-   <LINKPOINT x="3215" y="8768">
+   <LINKPOINT x="3218" y="9168">
    </LINKPOINT>
-   <LINKPOINT x="6685" y="8618">
+   <LINKPOINT x="6692" y="9018">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="39" srcpinname="Y Output Value" dstnodeid="15" dstpinname="TranslateX">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="41" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4425" top="7785" width="795" height="240">
+   <BOUNDS type="Box" left="4425" top="8185" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4425" top="7785" width="0" height="0">
+   <BOUNDS type="Node" left="4425" top="8185" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="0.16">
    </PIN>
@@ -269,9 +269,9 @@
    <LINK srcnodeid="41" srcpinname="Y Output Value" dstnodeid="15" dstpinname="Yaw">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="42" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="4095" top="7470" width="795" height="240">
+   <BOUNDS type="Box" left="4095" top="7870" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="4095" top="7470" width="0" height="0">
+   <BOUNDS type="Node" left="4095" top="7870" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="1.64">
    </PIN>
@@ -289,11 +289,11 @@
    <LINK srcnodeid="42" srcpinname="Y Output Value" dstnodeid="15" dstpinname="ScaleZ">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="43" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7683" top="9225" width="795" height="240">
+   <BOUNDS type="Box" left="7673" top="10275" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="7683" top="9225" width="0" height="0">
+   <BOUNDS type="Node" left="7673" top="10275" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="10">
+   <PIN pinname="Y Input Value" slicecount="2" values="100,1.36" visible="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -319,11 +319,11 @@
    </PIN>
    </NODE>
    <NODE systemname="Transform (ProjectorSimulation Table)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p" componentmode="Hidden" id="47" nodename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p">
-   <BOUNDS type="Node" left="465" top="6330" width="12045" height="270">
+   <BOUNDS type="Node" left="465" top="6830" width="12045" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="465" top="6330" width="4800" height="3600">
+   <BOUNDS type="Box" left="465" top="6830" width="4800" height="3600">
    </BOUNDS>
-   <BOUNDS type="Window" left="5565" top="8955" width="18195" height="4530">
+   <BOUNDS type="Window" left="14270" top="9430" width="18190" height="5480">
    </BOUNDS>
    <PIN pinname="Table" visible="1" slicecount="1" values="||">
    </PIN>
@@ -331,29 +331,29 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="47" srcpinname="ViewProjection transform" dstnodeid="40" dstpinname="ViewProjection" linkstyle="VHV">
-   <LINKPOINT x="495" y="7110">
+   <LINKPOINT x="429" y="7577">
    </LINKPOINT>
-   <LINKPOINT x="885" y="7110">
+   <LINKPOINT x="751" y="7543">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="47" srcpinname="ViewProjection transform" dstnodeid="8" dstpinname="ViewProjection In">
    </LINK>
    <LINK srcnodeid="47" srcpinname="ViewProjection transform" dstnodeid="26" dstpinname="ViewProjection Transform" hiddenwhenlocked="1" linkstyle="VHV">
-   <LINKPOINT x="495" y="6965">
+   <LINKPOINT x="495" y="7894">
    </LINKPOINT>
-   <LINKPOINT x="4305" y="7015">
+   <LINKPOINT x="4305" y="8386">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="47" srcpinname="ViewProjection transform" dstnodeid="23" dstpinname="ViewProjection Transform" linkstyle="VHV">
-   <LINKPOINT x="500" y="7015">
+   <LINKPOINT x="500" y="7577">
    </LINKPOINT>
-   <LINKPOINT x="8020" y="7115">
+   <LINKPOINT x="8030" y="7543">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="48" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="13545" top="2415" width="1905" height="240">
+   <BOUNDS type="Box" left="13540" top="2820" width="1905" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="13545" top="2415" width="0" height="0">
+   <BOUNDS type="Node" left="13540" top="2820" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" values="projectors.xml">
    </PIN>
@@ -371,9 +371,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="49" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="10515" top="1800" width="480" height="480">
+   <BOUNDS type="Box" left="9880" top="2820" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="10515" top="1800" width="0" height="0">
+   <BOUNDS type="Node" left="9880" top="2820" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
@@ -391,9 +391,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="50" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8985" top="1800" width="480" height="480">
+   <BOUNDS type="Box" left="8070" top="2820" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="8985" top="1800" width="0" height="0">
+   <BOUNDS type="Node" left="8070" top="2820" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="0">
    </PIN>
@@ -413,9 +413,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="51" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="12015" top="1800" width="480" height="480">
+   <BOUNDS type="Box" left="11710" top="2820" width="480" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="12015" top="1800" width="0" height="0">
+   <BOUNDS type="Node" left="11710" top="2820" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Y Input Value" slicecount="1" values="1">
    </PIN>
@@ -434,34 +434,14 @@
    <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="55">
-   <BOUNDS type="Node" left="11265" top="1800" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Bang" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="OR (Boolean)" nodename="OR (Boolean)" componentmode="Hidden" id="56">
-   <BOUNDS type="Node" left="8985" top="2640" width="2340" height="270">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="50" srcpinname="Y Output Value" dstnodeid="56" dstpinname="Input 1">
-   </LINK>
-   <LINK srcnodeid="55" srcpinname="Bang" dstnodeid="56" dstpinname="Input 2">
-   </LINK>
    <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 1">
    </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="57" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="8808" top="7566" width="792" height="480">
+   <BOUNDS type="Box" left="9298" top="8316" width="792" height="480">
    </BOUNDS>
-   <BOUNDS type="Node" left="8808" top="7566" width="0" height="0">
+   <BOUNDS type="Node" left="9298" top="8316" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="2" values="1920,1200">
+   <PIN pinname="Y Input Value" slicecount="1" values="1920" visible="1">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -478,14 +458,12 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Simulated resolution|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="57" srcpinname="Y Output Value" dstnodeid="26" dstpinname="ProjectorResolution XY">
-   </LINK>
    <LINK srcnodeid="57" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Projector resolution">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="58" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="9672" top="7566" width="2451" height="240">
+   <BOUNDS type="Node" left="10162" top="8316" width="2451" height="240">
    </BOUNDS>
-   <BOUNDS type="Box" left="9672" top="7566" width="1752" height="468">
+   <BOUNDS type="Box" left="10162" top="8316" width="1752" height="468">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|NB : this can&apos;t be spreaded currently|">
    </PIN>
@@ -497,13 +475,13 @@
    </PIN>
    </NODE>
    <NODE systemname="Table (DataTable)" filename="E:\Patches\Projector Sim - ExplorNova\DataTable\Table.csproj" nodename="Table (DataTable)" componentmode="Hidden" id="44">
-   <BOUNDS type="Node" left="4440" top="3210" width="9150" height="270">
+   <BOUNDS type="Node" left="4440" top="3610" width="9150" height="270">
    </BOUNDS>
    <PIN pinname="Column names">
    </PIN>
    <PIN pinname="SpreadTable" visible="1">
    </PIN>
-   <PIN pinname="Load" visible="1">
+   <PIN pinname="Load" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Table" visible="1">
    </PIN>
@@ -515,27 +493,29 @@
    </PIN>
    <PIN pinname="Filename" visible="1">
    </PIN>
+   <PIN pinname="Commands" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Clear" slicecount="1" values="0">
+   </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="Output String" dstnodeid="44" dstpinname="Filename">
    </LINK>
    <LINK srcnodeid="49" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Save">
    </LINK>
-   <LINK srcnodeid="56" srcpinname="Output" dstnodeid="44" dstpinname="Load">
-   </LINK>
    <LINK srcnodeid="44" srcpinname="Table" dstnodeid="47" dstpinname="Table">
    </LINK>
    <LINK srcnodeid="51" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Auto Save" linkstyle="VHV">
-   <LINKPOINT x="10750" y="2730">
+   <LINKPOINT x="10542" y="3130">
    </LINKPOINT>
-   <LINKPOINT x="13340" y="2730">
+   <LINKPOINT x="13238" y="3130">
    </LINKPOINT>
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="60" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="3705" top="1800" width="5160" height="480">
+   <BOUNDS type="Box" left="4805" top="1700" width="6620" height="400">
    </BOUNDS>
-   <BOUNDS type="Node" left="3705" top="1800" width="0" height="0">
+   <BOUNDS type="Node" left="4805" top="1700" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="|Position X (m),Position Y (m),Position Z (m),Rotation X,Rotation Y,Rotation Z,Throw Ratio, Width (px), Height (px), Lens Offset X, Lens Offset Y|">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="|PositionX(m), PositionY(m), PositionZ(m), RotationX(m), RotationY(m), RotationZ(m),ThrowRatio, Width(px), Height(px), LensOffsetX, LensOffsetY, Enabled|">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="|x,y,z|">
    </PIN>
@@ -545,6 +525,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Column Names|">
    </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="60" srcpinname="Output String" dstnodeid="44" dstpinname="Column Names" linkstyle="VHV">
    <LINKPOINT x="3765" y="2730">
@@ -552,10 +534,138 @@
    <LINKPOINT x="5955" y="2730">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="61" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="1095" top="2580" width="795" height="240">
+   <NODE systemname="TableView (DataTable)" filename="E:\Patches\Projector Sim - ExplorNova\DataTable\Table.csproj" nodename="TableView (DataTable)" componentmode="InABox" id="46">
+   <BOUNDS type="Node" left="17970" top="13945" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Node" left="1095" top="2580" width="0" height="0">
+   <PIN pinname="Table" visible="1">
+   </PIN>
+   <BOUNDS type="Box" width="12050" height="2370" left="450" top="4285">
+   </BOUNDS>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   <PIN pinname="Selected Row" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="44" srcpinname="Table" dstnodeid="46" dstpinname="Table" linkstyle="VHV">
+   <LINKPOINT x="4500" y="4043">
+   </LINKPOINT>
+   <LINKPOINT x="12435" y="4093">
+   </LINKPOINT>
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="62" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="5280" top="7930" width="3045" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5280" top="7930" width="2205" height="510">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|This defines the transform of the teapots|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="CreateTable (DataTable)" filename="%VVVV%\packs\VVVV.Nodes.DataTable\nodes\plugins\Table.dll" nodename="CreateTable (DataTable)" componentmode="Hidden" id="64">
+   <BOUNDS type="Node" left="4430" top="3110" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Table Name" slicecount="1" values="Projectors" visible="1">
+   </PIN>
+   <PIN pinname="Column Names" slicecount="1" visible="1" values="|Position X (m),Position Y (m),Position Z (m),Rotation X,Rotation Y,Rotation Z,Throw Ratio, Width (px), Height (px), Lens Offset X, Lens Offset Y, Enabled|">
+   </PIN>
+   <PIN pinname="Column Types" slicecount="1" visible="1" values="|d,d,d,d,d,d,d,i,i,d,d,b|">
+   </PIN>
+   <PIN pinname="Commands" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Insert" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="60" srcpinname="Output String" dstnodeid="64" dstpinname="Column Names">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="67" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="4970" top="2480" width="1910" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4970" top="2480" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="|d,d,d,d,d,d,d,i,i,d,d,b|">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="|d,d,d|">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Column Types|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="67" srcpinname="Output String" dstnodeid="64" dstpinname="Column Types">
+   </LINK>
+   <LINK srcnodeid="64" srcpinname="Commands" dstnodeid="44" dstpinname="Commands">
+   </LINK>
+   <LINK srcnodeid="50" srcpinname="Y Output Value" dstnodeid="44" dstpinname="Load">
+   </LINK>
+   <NODE systemname="GetRow (DataTable Dynamic)" filename="%VVVV%\packs\VVVV.Nodes.DataTable\nodes\plugins\Table.dll" nodename="GetRow (DataTable Dynamic)" componentmode="Hidden" id="70">
+   <BOUNDS type="Node" left="9310" top="7390" width="1110" height="270">
+   </BOUNDS>
+   <PIN pinname="Table" visible="1">
+   </PIN>
+   <PIN pinname="Name" slicecount="12" values="PositionX(m),PositionY(m),PositionZ(m),RotationX(m),RotationY(m),RotationZ(m),ThrowRatio,Width(px),Height(px),LensOffsetX,LensOffsetY,Enabled">
+   </PIN>
+   <PIN pinname="Type" slicecount="12" values="System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Double,System.Boolean">
+   </PIN>
+   <PIN pinname="PositionX(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="PositionY(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="PositionZ(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="RotationX(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="RotationZ(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="RotationY(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="ThrowRatio" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Width(px)" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Height(px)" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="LensOffsetY" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Enabled" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="LensOffsetX" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="ID" visible="-1" pintype="Output">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="44" srcpinname="Table" dstnodeid="70" dstpinname="Table" linkstyle="Bezier">
+   <LINKPOINT x="4663" y="5645">
+   </LINKPOINT>
+   <LINKPOINT x="9147" y="5615">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Vector (2d Join)" nodename="Vector (2d Join)" componentmode="Hidden" id="71">
+   <BOUNDS type="Node" left="9310" top="7850" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="XY" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="70" srcpinname="Width(px)" dstnodeid="71" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="70" srcpinname="Height(px)" dstnodeid="71" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="71" srcpinname="XY" dstnodeid="57" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="75" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="3760" top="2480" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3760" top="2480" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input String" slicecount="1" visible="1" values="Projectors">
    </PIN>
@@ -568,40 +678,92 @@
    <PIN pinname="Descriptive Name" slicecount="1" values="|Table Name|">
    </PIN>
    </NODE>
-   <LINK srcnodeid="61" srcpinname="Output String" dstnodeid="44" dstpinname="Table Name" linkstyle="VHV">
-   <LINKPOINT x="1155" y="3000">
+   <LINK srcnodeid="75" srcpinname="Output String" dstnodeid="64" dstpinname="Table Name" linkstyle="VHV">
+   <LINKPOINT x="3820" y="2890">
    </LINKPOINT>
-   <LINKPOINT x="4440" y="3000">
+   <LINKPOINT x="4610" y="2890">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="TableView (DataTable)" filename="E:\Patches\Projector Sim - ExplorNova\DataTable\Table.csproj" nodename="TableView (DataTable)" componentmode="InABox" id="46">
-   <BOUNDS type="Node" left="17970" top="13545" width="100" height="100">
+   <NODE systemname="Multiply (Value)" nodename="Multiply (Value)" componentmode="Hidden" id="76">
+   <BOUNDS type="Node" left="7690" top="11180" width="1090" height="270">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="GetRow (DataTable Dynamic)" filename="%VVVV%\packs\VVVV.Nodes.DataTable\nodes\plugins\Table.dll" nodename="GetRow (DataTable Dynamic)" componentmode="Hidden" id="77">
+   <BOUNDS type="Node" left="8410" top="10740" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Table" visible="1">
    </PIN>
-   <BOUNDS type="Box" width="12045" height="2370" left="450" top="3885">
-   </BOUNDS>
-   <PIN pinname="Index" visible="1">
+   <PIN pinname="Index" slicecount="1" values="11" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Name" slicecount="12" values="PositionX(m),PositionY(m),PositionZ(m),RotationX(m),RotationY(m),RotationZ(m),ThrowRatio,Width(px),Height(px),LensOffsetX,LensOffsetY,Enabled">
+   </PIN>
+   <PIN pinname="Type" slicecount="12" values="System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Double,System.Boolean">
+   </PIN>
+   <PIN pinname="LensOffsetX" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Height(px)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Width(px)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="ThrowRatio" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="RotationZ(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="RotationY(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="RotationX(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="PositionZ(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="PositionX(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="PositionY(m)" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="44" srcpinname="Table" dstnodeid="46" dstpinname="Table" linkstyle="VHV">
-   <LINKPOINT x="4500" y="3643">
+   <LINK srcnodeid="44" srcpinname="Table" dstnodeid="77" dstpinname="Table" linkstyle="VHV">
+   <LINKPOINT x="4470" y="4090">
    </LINKPOINT>
-   <LINKPOINT x="12435" y="3693">
+   <LINKPOINT x="8440" y="4090">
    </LINKPOINT>
    </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="62" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="5280" top="7530" width="3045" height="270">
+   <LINK srcnodeid="77" srcpinname="Enabled" dstnodeid="76" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="79">
+   <BOUNDS type="Node" left="9030" top="10350" width="450" height="270">
    </BOUNDS>
-   <BOUNDS type="Box" left="5280" top="7530" width="2205" height="510">
-   </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|This defines the transform of the teapots|">
+   <PIN pinname="Output" visible="1">
    </PIN>
-   <PIN pinname="Output String" visible="0">
-   </PIN>
-   <PIN pinname="Show Grid" slicecount="1" values="0">
-   </PIN>
-   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   <PIN pinname=".. To [" visible="1">
    </PIN>
    </NODE>
+   <LINK srcnodeid="79" srcpinname="Output" dstnodeid="77" dstpinname="Index">
+   </LINK>
+   <NODE systemname="Info (DataTable)" filename="%VVVV%\packs\VVVV.Nodes.DataTable\nodes\plugins\Table.dll" nodename="Info (DataTable)" componentmode="Hidden" id="80">
+   <BOUNDS type="Node" left="8720" top="9910" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Table" visible="1">
+   </PIN>
+   <PIN pinname="Row Count" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="44" srcpinname="Table" dstnodeid="80" dstpinname="Table" linkstyle="VHV">
+   <LINKPOINT x="4470" y="4090">
+   </LINKPOINT>
+   <LINKPOINT x="8750" y="4090">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="80" srcpinname="Row Count" dstnodeid="79" dstpinname=".. To [">
+   </LINK>
+   <LINK srcnodeid="46" srcpinname="Selected Row" dstnodeid="40" dstpinname="Selection" linkstyle="Bezier">
+   <LINKPOINT x="510" y="7260">
+   </LINKPOINT>
+   <LINKPOINT x="1810" y="7260">
+   </LINKPOINT>
+   </LINK>
    </PATCH>

@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta33.7_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)" scrollx="290" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)" scrollx="290" scrolly="0">
    <BOUNDS height="6870" left="0" top="8460" type="Window" width="15960">
    </BOUNDS>
    <NODE componentmode="InABox" id="6" nodename="IOBox (Node)" systemname="IOBox (Node)">
@@ -140,6 +140,8 @@
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Error Handling Style" slicecount="1" values="RedNode">
    </PIN>
    </NODE>
    <NODE componentmode="Hidden" id="29" nodename="Perspective (Transform OffCenter)" systemname="Perspective (Transform OffCenter)">
@@ -412,7 +414,7 @@
    </LINK>
    <LINK srcnodeid="39" srcpinname="Output" dstnodeid="29" dstpinname="Bottom">
    </LINK>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="52" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="3770" top="5430" width="800" height="240">
