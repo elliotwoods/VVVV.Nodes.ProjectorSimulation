@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45alpha30.3.dtd" >
-   <PATCH nodename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p" systemname="main" filename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p">
-   <BOUNDS type="Window" left="2565" top="7230" width="13380" height="16155">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p" systemname="main" filename="C:\vvvv\vvvv-sdk\vvvv45\packs\ProjectorSimulation\examples\Example 0 - Simple DX9\main.v4p">
+   <BOUNDS type="Window" left="2880" top="1900" width="13380" height="16150">
    </BOUNDS>
    <NODE systemname="Transform (ProjectorSimulation)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\Transform (ProjectorSimulation).v4p" nodename="Transform (ProjectorSimulation)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="465" top="3495" width="9795" height="270">
@@ -8,6 +8,8 @@
    <PIN pinname="Rotate XYZ" visible="1">
    </PIN>
    <PIN pinname="ViewProjection transform" visible="1">
+   </PIN>
+   <PIN pinname="ViewProjection Transform" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">
@@ -149,11 +151,13 @@
    <NODE systemname="Preview (ProjectorSimulation DX9)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\Preview (ProjectorSimulation DX9).v4p" nodename="Preview (ProjectorSimulation DX9)" componentmode="InAWindow" id="8">
    <BOUNDS type="Node" left="465" top="5175" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="ViewProjection In" visible="1">
+   <PIN pinname="ViewProjection In" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layers" visible="1">
    </PIN>
    <PIN pinname="Color" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
    </PIN>
    </NODE>
    <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InABox" id="9">
@@ -193,7 +197,7 @@
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
-   <PIN pinname="Layer 1" visible="1">
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Layer 2" visible="1">
    </PIN>
@@ -204,18 +208,16 @@
    </NODE>
    <LINK srcnodeid="11" srcpinname="Layer" dstnodeid="9" dstpinname="Layers">
    </LINK>
-   <LINK srcnodeid="8" srcpinname="Layers" dstnodeid="11" dstpinname="Layer 1">
-   </LINK>
    <LINK srcnodeid="10" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 2">
    </LINK>
-   <NODE systemname="Camera (Transform Softimage)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="12">
+   <NODE systemname="CAMERA (TRANSFORM SOFTIMAGE)" filename="%VVVV%\lib\nodes\modules\Transform\Camera (Transform Softimage).v4p" nodename="Camera (Transform Softimage)" componentmode="Hidden" id="12">
    <BOUNDS type="Node" left="10035" top="10290" width="100" height="100">
    </BOUNDS>
    <PIN pinname="View" visible="1">
    </PIN>
    <PIN pinname="Projection" visible="1">
    </PIN>
-   <PIN pinname="Inital Distance" slicecount="1" values="3">
+   <PIN pinname="Initial Distance" slicecount="1" values="3">
    </PIN>
    <PIN pinname="Initial Pitch" slicecount="1" values="0.06">
    </PIN>
@@ -287,7 +289,7 @@
    </PIN>
    <PIN pinname="Transform" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="ViewProjection Transform" visible="1">
+   <PIN pinname="ViewProjection Transform" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Depth Map" visible="1" slicecount="1" values="||">
    </PIN>
@@ -301,12 +303,6 @@
    <LINK srcnodeid="26" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 3">
    </LINK>
    <LINK srcnodeid="13" srcpinname="Mesh" dstnodeid="26" dstpinname="Mesh">
-   </LINK>
-   <LINK srcnodeid="1" srcpinname="ViewProjection transform" dstnodeid="26" dstpinname="ViewProjection Transform" linkstyle="VHV" hiddenwhenlocked="1">
-   <LINKPOINT x="495" y="4540">
-   </LINKPOINT>
-   <LINKPOINT x="4305" y="4760">
-   </LINKPOINT>
    </LINK>
    <NODE systemname="RenderDepthMap (ProjectorSimulation EX9.Geometry)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\RenderDepthMap (ProjectorSimulation EX9.Geometry).v4p" nodename="RenderDepthMap (ProjectorSimulation EX9.Geometry)" componentmode="Hidden" id="23">
    <BOUNDS type="Node" left="5400" top="7545" width="6045" height="270">
@@ -322,12 +318,6 @@
    <PIN pinname="Mesh" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="ViewProjection transform" dstnodeid="23" dstpinname="ViewProjection Transform" linkstyle="VHV">
-   <LINKPOINT x="495" y="4440">
-   </LINKPOINT>
-   <LINKPOINT x="8025" y="4560">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="24" srcpinname="Y Output Value" dstnodeid="23" dstpinname="Projector resolution">
    </LINK>
    <LINK srcnodeid="23" srcpinname="DepthMap Texture" dstnodeid="26" dstpinname="Depth Map">
@@ -507,19 +497,13 @@
    </PIN>
    </NODE>
    <NODE systemname="ColorSpread (ProjectorSimulation)" filename="%VVVV%\packs\ProjectorSimulation\lib\nodes\modules\ColorSpread (ProjectorSimulation).v4p" nodename="ColorSpread (ProjectorSimulation)" componentmode="Hidden" id="40">
-   <BOUNDS type="Node" left="855" top="4725" width="100" height="100">
+   <BOUNDS type="Node" left="655" top="4695" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="ViewProjection" visible="1">
+   <PIN pinname="ViewProjection" visible="1" slicecount="1" values="||">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="1" srcpinname="ViewProjection transform" dstnodeid="40" dstpinname="ViewProjection" linkstyle="VHV">
-   <LINKPOINT x="495" y="4535">
-   </LINKPOINT>
-   <LINKPOINT x="885" y="4555">
-   </LINKPOINT>
-   </LINK>
    <LINK srcnodeid="40" srcpinname="Output" dstnodeid="8" dstpinname="Color">
    </LINK>
    <NODE systemname="Transform (Transform 3d)" nodename="Transform (Transform 3d)" componentmode="Hidden" id="15">
@@ -608,4 +592,14 @@
    </NODE>
    <LINK srcnodeid="43" srcpinname="Y Output Value" dstnodeid="26" dstpinname="brightness">
    </LINK>
+   <LINK srcnodeid="1" srcpinname="ViewProjection Transform" dstnodeid="23" dstpinname="ViewProjection Transform">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="ViewProjection Transform" dstnodeid="26" dstpinname="ViewProjection Transform">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Layer" dstnodeid="11" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="1" srcpinname="ViewProjection Transform" dstnodeid="40" dstpinname="ViewProjection">
+   </LINK>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
    </PATCH>
