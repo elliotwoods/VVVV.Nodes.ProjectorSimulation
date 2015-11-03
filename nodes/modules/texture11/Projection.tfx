@@ -19,15 +19,14 @@ float4x4 tWVP: WORLDVIEWPROJECTION;
 float4x4 tWV: WORLDVIEW;
 float4x4 tWIT: WORLDINVERSETRANSPOSE;
 float4x4 TargetVPI;
-float3 ProjectorPosition;
-float3 ProjectorLookVector;
+float3 ProjectorPosition[MAX_PROJECTOR_COUNT];
+float3 ProjectorLookVector[MAX_PROJECTOR_COUNT];
 
 int ActiveProjectorCount = 2;
 
 float4x4 tProjector[MAX_PROJECTOR_COUNT];
 float brightness[MAX_PROJECTOR_COUNT];
 float DepthEpsilon = 1e-4;
-float Alpha = 1.0f;
 
 bool ApplyShadows = true;
 bool ApplyFade = true;
@@ -116,7 +115,7 @@ float3 applyProjector(int i, Pixel pixel, int projectorCount)
 	
 	//this step applies an inverse square relationship
 	//brightness ~= 1/(Distance in z)^2
-	float Distance = length(dot(pixel.PosW.xyz - ProjectorPosition, ProjectorLookVector));
+	float Distance = length(dot(pixel.PosW.xyz - ProjectorPosition[i], ProjectorLookVector[i]));
 	if (ApplyFade)
 	{
 		value /= Distance * Distance;

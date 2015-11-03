@@ -126,8 +126,6 @@
    </LINK>
    <LINK srcnodeid="10" srcpinname="Depth Out" dstnodeid="7" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="12" srcpinname="Layer Out" dstnodeid="10" dstpinname="Layer">
-   </LINK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="19" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="9000" top="5730" width="800" height="240">
    </BOUNDS>
@@ -147,7 +145,11 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Layer In|">
    </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="20" srcpinname="Output Node" dstnodeid="12" dstpinname="Layer In">
+   </LINK>
+   <LINK srcnodeid="12" srcpinname="Layer Out" dstnodeid="10" dstpinname="Layer">
    </LINK>
    </PATCH>
