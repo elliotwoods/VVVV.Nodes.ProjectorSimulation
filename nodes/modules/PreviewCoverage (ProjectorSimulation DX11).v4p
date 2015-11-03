@@ -37,9 +37,9 @@
    </PIN>
    </NODE>
    <NODE componentmode="InABox" id="5" nodename="IOBox (Node)" systemname="IOBox (Node)">
-   <BOUNDS height="0" left="1165" top="9495" type="Node" width="0">
+   <BOUNDS height="0" left="1170" top="9500" type="Node" width="0">
    </BOUNDS>
-   <BOUNDS height="240" left="1165" top="9495" type="Box" width="795">
+   <BOUNDS height="240" left="1170" top="9500" type="Box" width="795">
    </BOUNDS>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Layer">
    </PIN>
@@ -411,9 +411,9 @@
    <LINK srcnodeid="40" srcpinname="Y Output Value" dstnodeid="22" dstpinname="ProjectorLookVectorXYZ">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="41" systemname="IOBox (String)">
-   <BOUNDS type="Node" left="13160" top="9320" width="7660" height="230">
+   <BOUNDS type="Node" left="13160" top="9500" width="7660" height="230">
    </BOUNDS>
-   <BOUNDS type="Box" left="13160" top="9320" width="2760" height="800">
+   <BOUNDS type="Box" left="13160" top="9500" width="2760" height="800">
    </BOUNDS>
    <PIN pinname="Input String" visible="0" slicecount="1" values="|NOTE: If you have more than 64 projectors, then you need to change MAX_PROJECTOR_COUNT in Coverage.fx|">
    </PIN>
@@ -435,5 +435,15 @@
    <LINK srcnodeid="39" srcpinname="Output" dstnodeid="42" dstpinname="XYZ">
    </LINK>
    <LINK srcnodeid="42" srcpinname="NormalizedXYZ" dstnodeid="40" dstpinname="Y Input Value">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="43" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="15950" top="9500" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="15950" top="9500" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Query">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Query" dstnodeid="43" dstpinname="Input Node">
    </LINK>
    </PATCH>
