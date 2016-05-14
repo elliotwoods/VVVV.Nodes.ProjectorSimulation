@@ -3,7 +3,18 @@
 //@tags: ProjectionSimulation
 //@credits:
 
+ 
+cbuffer cbPerDraw : register( b0 )
+{
+	float4x4 tV: VIEW;         //view matrix as set via Renderer (EX9)
+	float4x4 tVP: VIEWPROJECTION;
+};
 
+cbuffer cbPerObj : register( b1 )
+{
+	float4x4 tW : WORLD;
+	float4x4 TargetVPI;
+};
 
 //--
 //Parameters
@@ -12,24 +23,19 @@
 #define MAX_PROJECTOR_COUNT 64
 
 //transforms
-float4x4 tW: WORLD;        //the models world matrix
-float4x4 tV: VIEW;         //view matrix as set via Renderer (EX9)
-float4x4 tP: PROJECTION;   //projection matrix as set via Renderer (EX9)
-float4x4 tWVP: WORLDVIEWPROJECTION;
-float4x4 tWV: WORLDVIEW;
-float4x4 tWIT: WORLDINVERSETRANSPOSE;
-float4x4 TargetVPI;
-float3 ProjectorPosition[MAX_PROJECTOR_COUNT];
-float3 ProjectorLookVector[MAX_PROJECTOR_COUNT];
+float3 ProjectorPosition;
+float3 ProjectorLookVector;
 
 int ActiveProjectorCount = 2;
 
 float4x4 tProjector[MAX_PROJECTOR_COUNT];
 float brightness[MAX_PROJECTOR_COUNT];
 float DepthEpsilon = 1e-4;
+float Alpha = 1.0f;
 
 bool ApplyShadows = true;
 bool ApplyFade = true;
+bool ApplyNormals = true;
 
 //
 //--
@@ -52,7 +58,7 @@ SamplerState g_SamPoint {
 	AddressV = Clamp;
 };
 
-Texture2D<float> TexTargetDepth : PREVIOUS;
+Texture2D<float> TexTargetDepth;
 Texture2DArray<float> TexArrayDepth <string uiname="Depth Maps"; >;
 Texture2D TexImage <string uiname="Image";>;
 //
@@ -64,9 +70,15 @@ Texture2D TexImage <string uiname="Image";>;
 //Inter-shader structs
 //--
 //
+struct vs_in
+{
+	float4 PosO : POSITION;
+	float4 TexCd : TEXCOORD0;
+};
+
 struct ps_in {
-	float4 pixel : SV_Position;
-	float2 uv : TEXCOORD0;
+	float4 PosWVP : SV_POSITION;
+	float4 TexCd : TEXCOORD0;
 };
 
 struct Pixel {
@@ -75,6 +87,23 @@ struct Pixel {
 };
 //
 //--
+
+
+
+//--
+//Vertex shaders
+//--
+//
+ps_in VS(vs_in input)
+{
+    ps_in output;
+    output.PosWVP  = mul(input.PosO,mul(tW,tVP));
+    output.TexCd = input.TexCd;
+    return output;
+}
+//
+//--
+
 
 
 //--
@@ -103,7 +132,7 @@ float3 applyProjector(int i, Pixel pixel, int projectorCount)
 	//this step applies depth testing and aliasing
 	//aliasing occurs if threshold is very low (< 1e-6)
 	float DepthMapValue = TexArrayDepth.Sample(g_SamPoint, DepthMapCd);
-	/*DEBUG*/ //return sin(DepthMapValue * 1000);
+	/*DEBUG*/ return sin(DepthMapValue * 1000);
 	/*DEBUG*/ //return DepthMapValue == 1;
 	/*DEBUG*/ //return sin(float3(DepthMapValue, Depth, 0) * 10000) * insideProjector;
 	/*DEBUG*/ //return (abs(DepthMapValue - Depth) < DepthEpsilon) * insideProjector;
@@ -114,7 +143,7 @@ float3 applyProjector(int i, Pixel pixel, int projectorCount)
 	
 	//this step applies an inverse square relationship
 	//brightness ~= 1/(Distance in z)^2
-	float Distance = length(dot(pixel.PosW.xyz - ProjectorPosition[i], ProjectorLookVector[i]));
+	float Distance = length(dot(pixel.PosW.xyz - ProjectorPosition, ProjectorLookVector));
 	if (ApplyFade)
 	{
 		value /= Distance * Distance;
@@ -162,9 +191,9 @@ float4 PreviewCoverage(ps_in In): SV_Target
 {
 	Pixel pixel = (Pixel) 0;
 	
-	pixel.PosTargetP.x = In.uv.x * 2.0f - 1.0f;
-	pixel.PosTargetP.y = 1.0f - In.uv.y * 2.0f;
-	pixel.PosTargetP.z = TexTargetDepth.Load(In.pixel.xyz);
+	pixel.PosTargetP.x = In.TexCd.x * 2.0f - 1.0f;
+	pixel.PosTargetP.y = 1.0f - In.TexCd.y * 2.0f;
+	pixel.PosTargetP.z = TexTargetDepth.Sample(g_SamPoint, In.TexCd.xy);
 	pixel.PosTargetP.w = 1.0f;
 	
 	pixel.PosW = mul(pixel.PosTargetP, TargetVPI);
@@ -181,15 +210,22 @@ float4 PreviewCoverage(ps_in In): SV_Target
 	
 	return saturate(col);
 }
+//
+//--
 
-// --------------------------------------------------------------------------------------------------
-// TECHNIQUES:
-// --------------------------------------------------------------------------------------------------
 
-technique10 TApplyProjection
+
+
+
+technique10 Constant
 {
-    pass P0
-    {
-    	SetPixelShader(CompileShader(ps_5_0, PreviewCoverage()));
-    }
+	pass P0
+	{
+		SetVertexShader( CompileShader( vs_4_0, VS() ) );
+		SetPixelShader( CompileShader( ps_4_0, PreviewCoverage() ) );
+	}
 }
+
+
+
+

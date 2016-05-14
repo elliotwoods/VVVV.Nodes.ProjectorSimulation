@@ -1,0 +1,113 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="E:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\CreateTable (ProjectorSimulation DataTable).v4p" systemname="CreateTable (ProjectorSimulation DataTable)" filename="E:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\CreateTable (ProjectorSimulation DataTable).v4p" scrollx="384" scrolly="0">
+   <NODE systemname="CreateTable (DataTable)" filename="%VVVV%\packs\VVVV.Nodes.DataTable\nodes\plugins\Table.dll" nodename="CreateTable (DataTable)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="2820" top="4620" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Commands" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Table Name" slicecount="1" values="Projectors">
+   </PIN>
+   <PIN pinname="Column Names" slicecount="12" visible="1" values="PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,ThrowRatio,|Width (px)|,|Height (px)|,LensOffsetX,LensOffsetY,Enabled">
+   </PIN>
+   <PIN pinname="Insert" visible="1">
+   </PIN>
+   <PIN pinname="Column Types" visible="1" slicecount="1" values="|d,d,d|">
+   </PIN>
+   </NODE>
+   <NODE id="1" systemname="IOBox (Node)" componentmode="InABox" nodename="IOBox (Node)">
+   <PIN pinname="Descriptive Name" slicecount="1" values="Commands">
+   </PIN>
+   <BOUNDS type="Box" left="2820" top="5220" width="750" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="2820" top="5220" width="750" height="240">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Commands" dstnodeid="1" dstpinname="Input Node">
+   </LINK>
+   <BOUNDS type="Window" left="19980" top="16344" width="7092" height="6912">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="2" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="3768" top="3708" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3768" top="3708" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Insert">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Insert">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="3">
+   <BOUNDS type="Node" left="1884" top="192" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1884" top="192" width="1080" height="2172">
+   </BOUNDS>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="12">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="12" values="PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,ThrowRatio,Width(px),Height(px),LensOffsetX,LensOffsetY,Enabled">
+   </PIN>
+   </NODE>
+   <NODE systemname="Add (String Spectral)" nodename="Add (String Spectral)" componentmode="Hidden" id="5">
+   <BOUNDS type="Node" left="3396" top="3108" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Intersperse" slicecount="1" values="CommaPlusSpace">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="6">
+   <BOUNDS type="Node" left="3396" top="192" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3396" top="192" width="1080" height="2172">
+   </BOUNDS>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="12">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Input String" slicecount="12" values="d,d,d,d,d,d,d,i,i,d,d,b">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="6" srcpinname="Output String" dstnodeid="5" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="5" srcpinname="Output" dstnodeid="0" dstpinname="Column Types">
+   </LINK>
+   <NODE systemname="Add (String Spectral)" nodename="Add (String Spectral)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2592" top="3108" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Intersperse" slicecount="1" values="CommaPlusSpace">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="1" values="text">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output" dstnodeid="0" dstpinname="Column Names">
+   </LINK>
+   <LINK srcnodeid="3" srcpinname="Output String" dstnodeid="7" dstpinname="Input">
+   </LINK>
+   </PATCH>

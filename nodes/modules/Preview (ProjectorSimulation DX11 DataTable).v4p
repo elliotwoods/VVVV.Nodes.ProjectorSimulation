@@ -1,0 +1,163 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11 DataTable).v4p" systemname="Preview (ProjectorSimulation DX11 DataTable)" filename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11 DataTable).v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="15230" top="9470" width="9000" height="6000">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE systemname="ColorSpread (ProjectorSimulation)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\ColorSpread (ProjectorSimulation).v4p" nodename="ColorSpread (ProjectorSimulation)" componentmode="Hidden" id="1">
+   <BOUNDS type="Node" left="3295" top="1688" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ViewProjection" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Lightness" visible="1" slicecount="1" values="0.5">
+   </PIN>
+   <BOUNDS type="Window" left="25095" top="12795" width="9150" height="6465">
+   </BOUNDS>
+   <PIN pinname="Selection" visible="1" slicecount="1" values="0">
+   </PIN>
+   <BOUNDS type="Box" left="3295" top="1688">
+   </BOUNDS>
+   </NODE>
+   <NODE systemname="Preview (ProjectorSimulation DX11)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11).v4p" nodename="Preview (ProjectorSimulation DX11)" componentmode="Hidden" id="0">
+   <BOUNDS type="Node" left="1430" top="3190" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="ViewProjection In" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <BOUNDS type="Box" left="1425" top="3185">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="3" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1430" top="3830" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1430" top="3830" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="0" srcpinname="Layer" dstnodeid="3" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="4" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="3360" top="500" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="3360" top="500" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input Node" slicecount="1" visible="1" values="||">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Table">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4560" top="500" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4560" top="500" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Selection">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="1" dstpinname="Selection">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="6" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5580" top="500" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5580" top="500" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Near Plane|">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="7" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7230" top="500" width="800" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7230" top="500" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="100">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Far Plane|">
+   </PIN>
+   </NODE>
+   <NODE systemname="Transform (ProjectorSimulation Table)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p" componentmode="Hidden" id="2" nodename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p">
+   <BOUNDS type="Node" left="1430" top="1140" width="5860" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1430" top="1140" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="11628" top="10548" width="18180" height="5472">
+   </BOUNDS>
+   <PIN pinname="Table" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="ViewProjection transform" visible="1">
+   </PIN>
+   <PIN pinname="Far Plane" slicecount="1" visible="1" values="100">
+   </PIN>
+   <PIN pinname="Near Plane" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="2" srcpinname="ViewProjection transform" dstnodeid="0" dstpinname="ViewProjection In">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Output Node" dstnodeid="2" dstpinname="Table">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="ViewProjection transform" dstnodeid="1" dstpinname="ViewProjection">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Near Plane">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Y Output Value" dstnodeid="2" dstpinname="Far Plane">
+   </LINK>
+   <NODE systemname="Switch (Color Input)" nodename="Switch (Color Input)" componentmode="Hidden" id="8">
+   <BOUNDS type="Node" left="1632" top="2664" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Switch" visible="1">
+   </PIN>
+   <PIN pinname="Input 1" slicecount="1" values="|0.19129,0.19129,0.19129,1.00000|">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="1" srcpinname="Output" dstnodeid="8" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Enabled" dstnodeid="8" dstpinname="Switch">
+   </LINK>
+   <LINK srcnodeid="8" srcpinname="Output" dstnodeid="0" dstpinname="Color">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="9" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2556" top="2724" width="1908" height="240">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2556" top="2724" width="3144" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|//show dark grey if diabled|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="String">
+   </PIN>
+   </NODE>
+   </PATCH>
