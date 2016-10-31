@@ -33,6 +33,8 @@
    </BOUNDS>
    <PIN pinname="Layer" visible="1">
    </PIN>
+   <BOUNDS type="Window" left="10776" top="7032" width="15804" height="15744">
+   </BOUNDS>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="3" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1430" top="3830" width="800" height="240">
