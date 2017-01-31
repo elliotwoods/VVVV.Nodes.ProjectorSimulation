@@ -35,6 +35,8 @@
    </PIN>
    <BOUNDS type="Window" left="10776" top="7032" width="15804" height="15744">
    </BOUNDS>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="3" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1430" top="3830" width="800" height="240">
@@ -93,7 +95,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="7230" top="500" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="100">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="10">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -162,4 +164,24 @@
    <PIN pinname="String Type" slicecount="1" values="String">
    </PIN>
    </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="10" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="8184" top="468" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8184" top="468" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Enabled">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
+   </LINK>
    </PATCH>

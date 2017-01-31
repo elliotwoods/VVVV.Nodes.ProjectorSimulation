@@ -41,7 +41,7 @@ float4 PS(psInput input): SV_Target
     float4 col = cAmb;
 	col = mul(col, tColor);
 	col.a *= Alpha;
-	col.a *= pow(abs(input.towardsProjector),0.1);
+	col.a *= pow(abs(input.towardsProjector),0.3) * 0.95 + 0.05;
     return col;
 }
 

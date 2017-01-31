@@ -27,13 +27,13 @@
     </xs:element>
   </xs:schema>
   <Projectors>
-    <PositionX_x0028_m_x0029_>1.7800000000000018</PositionX_x0028_m_x0029_>
-    <PositionY_x0028_m_x0029_>1.6440000000000101</PositionY_x0028_m_x0029_>
-    <PositionZ_x0028_m_x0029_>-0.68199999999997418</PositionZ_x0028_m_x0029_>
-    <RotationX_x0028_m_x0029_>0.060000000000000116</RotationX_x0028_m_x0029_>
-    <RotationY_x0028_m_x0029_>-0.064000000000000015</RotationY_x0028_m_x0029_>
+    <PositionX_x0028_m_x0029_>-0.27400000000000113</PositionX_x0028_m_x0029_>
+    <PositionY_x0028_m_x0029_>0.56000000000000472</PositionY_x0028_m_x0029_>
+    <PositionZ_x0028_m_x0029_>-1.649999999999993</PositionZ_x0028_m_x0029_>
+    <RotationX_x0028_m_x0029_>0</RotationX_x0028_m_x0029_>
+    <RotationY_x0028_m_x0029_>-1.07</RotationY_x0028_m_x0029_>
     <RotationZ_x0028_m_x0029_>0</RotationZ_x0028_m_x0029_>
-    <ThrowRatio>1.4</ThrowRatio>
+    <ThrowRatio>2.519999999999992</ThrowRatio>
     <Width_x0028_px_x0029_>1920</Width_x0028_px_x0029_>
     <Height_x0028_px_x0029_>1080</Height_x0028_px_x0029_>
     <LensOffsetX>0</LensOffsetX>
@@ -41,17 +41,17 @@
     <Enabled>true</Enabled>
   </Projectors>
   <Projectors>
-    <PositionX_x0028_m_x0029_>-0.27400000000000113</PositionX_x0028_m_x0029_>
-    <PositionY_x0028_m_x0029_>0.56000000000000472</PositionY_x0028_m_x0029_>
-    <PositionZ_x0028_m_x0029_>-2.3899999999999966</PositionZ_x0028_m_x0029_>
+    <PositionX_x0028_m_x0029_>0</PositionX_x0028_m_x0029_>
+    <PositionY_x0028_m_x0029_>1</PositionY_x0028_m_x0029_>
+    <PositionZ_x0028_m_x0029_>-1.7200000000000024</PositionZ_x0028_m_x0029_>
     <RotationX_x0028_m_x0029_>0</RotationX_x0028_m_x0029_>
-    <RotationY_x0028_m_x0029_>0</RotationY_x0028_m_x0029_>
+    <RotationY_x0028_m_x0029_>0.010000000000000198</RotationY_x0028_m_x0029_>
     <RotationZ_x0028_m_x0029_>0</RotationZ_x0028_m_x0029_>
-    <ThrowRatio>1.4</ThrowRatio>
+    <ThrowRatio>2</ThrowRatio>
     <Width_x0028_px_x0029_>1920</Width_x0028_px_x0029_>
     <Height_x0028_px_x0029_>1080</Height_x0028_px_x0029_>
     <LensOffsetX>0</LensOffsetX>
-    <LensOffsetY>0</LensOffsetY>
+    <LensOffsetY>0.5</LensOffsetY>
     <Enabled>true</Enabled>
   </Projectors>
 </projectors>

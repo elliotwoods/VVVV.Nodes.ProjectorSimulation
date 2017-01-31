@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11).v4p" filename="C:\vvvv\vvvv_45beta33.1_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11).v4p" systemname="Preview (ProjectorSimulation DX11)" scrollx="0" scrolly="-360">
+   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11).v4p" filename="C:\vvvv\vvvv_45beta33.1_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11).v4p" systemname="Preview (ProjectorSimulation DX11)" scrollx="0" scrolly="84">
    <BOUNDS height="15744" left="10776" top="7032" type="Window" width="15804">
    </BOUNDS>
    <NODE componentmode="InABox" id="6" nodename="IOBox (Node)" systemname="IOBox (Node)">
@@ -51,6 +51,10 @@
    </PIN>
    <PIN encoded="0" pinname="Descriptive Name" slicecount="1" values="Enabled">
    </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <NODE componentmode="InABox" id="24" nodename="IOBox (Color)" systemname="IOBox (Color)">
    <BOUNDS height="0" left="4197" top="7536" type="Node" width="0">
@@ -94,26 +98,6 @@
    </NODE>
    <LINK srcnodeid="24" srcpinname="Color Output" dstnodeid="35" dstpinname="Input">
    </LINK>
-   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="37" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="7077" top="7536" width="480" height="480">
-   </BOUNDS>
-   <BOUNDS type="Node" left="7077" top="7536" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" values="1">
-   </PIN>
-   <PIN pinname="Units" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Precision" slicecount="1" values="4">
-   </PIN>
-   <PIN pinname="Value Type" slicecount="1" values="Boolean">
-   </PIN>
-   <PIN pinname="Behavior" slicecount="1" values="Toggle">
-   </PIN>
-   <PIN pinname="Descriptive Name" slicecount="1" values="Arrow">
-   </PIN>
-   <PIN pinname="Y Output Value" visible="1">
-   </PIN>
-   </NODE>
    <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE componentmode="Hidden" id="14" nodename="Box (DX11.Geometry)" systemname="Box (DX11.Geometry)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll">
@@ -198,8 +182,6 @@
    </LINK>
    <LINK srcnodeid="16" srcpinname="Layer Out" dstnodeid="6" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="32" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 3">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="43" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7866" top="9408" width="795" height="720">
    </BOUNDS>
@@ -233,7 +215,7 @@
    </PIN>
    <PIN pinname="Transform" visible="1">
    </PIN>
-   <PIN pinname="Enabled" visible="1">
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
    </PIN>
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
@@ -340,8 +322,6 @@
    <PIN pinname="Transform In" visible="1" slicecount="1" values="||">
    </PIN>
    </NODE>
-   <LINK srcnodeid="51" srcpinname="Transform Out" dstnodeid="52" dstpinname="Source">
-   </LINK>
    <LINK srcnodeid="52" srcpinname="Transform Out" dstnodeid="53" dstpinname="Transform In">
    </LINK>
    <LINK srcnodeid="53" srcpinname="Transform Out" dstnodeid="39" dstpinname="Transform In">
@@ -439,7 +419,7 @@
    </PIN>
    </NODE>
    <NODE systemname="GeometryBuffer (DX11.Geometry Join)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="GeometryBuffer (DX11.Geometry Join)" componentmode="Hidden" id="54">
-   <BOUNDS type="Node" left="3588" top="5892" width="100" height="100">
+   <BOUNDS type="Node" left="3600" top="6432" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Vertices" visible="1" slicecount="96" values="0.5,-0.5,0.5,-0.5,-0.5,0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5,-0.5">
    </PIN>
@@ -613,10 +593,10 @@
    </PIN>
    <PIN pinname="Transform In" visible="1">
    </PIN>
+   <PIN pinname="Enabled" visible="1" slicecount="1" values="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="54" srcpinname="Geometry Out" dstnodeid="71" dstpinname="Geometry">
-   </LINK>
-   <LINK srcnodeid="71" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 2">
    </LINK>
    <NODE systemname="Switch (Value Input)" nodename="Switch (Value Input)" componentmode="Hidden" id="73">
    <BOUNDS type="Node" left="3612" top="5124" width="100" height="100">
@@ -722,12 +702,58 @@
    </LINK>
    <LINK srcnodeid="17" srcpinname="Transform Out" dstnodeid="71" dstpinname="Transform In">
    </LINK>
-   <NODE systemname="OnOpen (VVVV)" nodename="OnOpen (VVVV)" componentmode="Hidden" id="78">
-   <BOUNDS type="Node" left="4920" top="5508" width="100" height="100">
+   <NODE systemname="Change (Animation)" nodename="Change (Animation)" componentmode="Hidden" id="79">
+   <BOUNDS type="Node" left="4884" top="5484" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Bang" visible="1">
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Bang On Create" slicecount="1" values="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="78" srcpinname="Bang" dstnodeid="54" dstpinname="Apply">
+   <LINK srcnodeid="23" srcpinname="Y Output Value" dstnodeid="79" dstpinname="Input">
+   </LINK>
+   <NODE systemname="MonoFlop (Animation)" nodename="MonoFlop (Animation)" componentmode="Hidden" id="80">
+   <BOUNDS type="Node" left="4836" top="5928" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Set" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="79" srcpinname="OnChange" dstnodeid="80" dstpinname="Set">
+   </LINK>
+   <LINK srcnodeid="80" srcpinname="Output" dstnodeid="54" dstpinname="Apply">
+   </LINK>
+   <LINK srcnodeid="51" srcpinname="Transform Out" dstnodeid="52" dstpinname="Source">
+   </LINK>
+   <NODE id="37" nodename="IOBox (Value Advanced)" componentmode="InABox" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="7077" top="7536" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="7077" top="7536" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Axes">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="37" srcpinname="Y Output Value" dstnodeid="39" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="71" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="32" srcpinname="Layer" dstnodeid="16" dstpinname="Layer 3">
    </LINK>
    </PATCH>

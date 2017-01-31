@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p" systemname="Transform (ProjectorSimulation Table)" filename="C:\vvvv-sdk\vvvv45\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation Table).v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="11628" top="10548" width="18180" height="5472">
+   <BOUNDS type="Window" left="13240" top="9770" width="18190" height="5480">
    </BOUNDS>
    <NODE systemname="Transform (ProjectorSimulation)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" nodename="Transform (ProjectorSimulation)" componentmode="Hidden" id="0">
    <BOUNDS type="Node" left="1185" top="3155" width="15630" height="270">
@@ -133,6 +133,8 @@
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Transform In|">
    </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="0" dstpinname="Transform In">
    </LINK>
@@ -173,7 +175,7 @@
    </BOUNDS>
    <PIN pinname="Table" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="Name" slicecount="12" values="PositionX,PositionY,PositionZ,RotationX,RotationY,RotationZ,ThrowRatio,Width(px),Height(px),LensOffsetX,LensOffsetY,Enabled">
+   <PIN pinname="Name" slicecount="12" values="PositionX(m),PositionY(m),PositionZ(m),RotationX(m),RotationY(m),RotationZ(m),ThrowRatio,Width(px),Height(px),LensOffsetX,LensOffsetY,Enabled">
    </PIN>
    <PIN pinname="Type" slicecount="12" values="System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Int32,System.Int32,System.Double,System.Double,System.Boolean">
    </PIN>
@@ -264,18 +266,6 @@
    </LINK>
    <LINK srcnodeid="0" srcpinname="Projection Transform" dstnodeid="15" dstpinname="Input Node">
    </LINK>
-   <LINK srcnodeid="16" srcpinname="PositionX" dstnodeid="4" dstpinname="X">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="PositionY" dstnodeid="4" dstpinname="Y">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="PositionZ" dstnodeid="4" dstpinname="Z">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="RotationX" dstnodeid="5" dstpinname="X">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="RotationY" dstnodeid="5" dstpinname="Y">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="RotationZ" dstnodeid="5" dstpinname="Z">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="23" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="13908" top="4188" width="480" height="480">
    </BOUNDS>
@@ -307,13 +297,11 @@
    </PIN>
    <PIN pinname="Rows" slicecount="1" values="3">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="3" values=",,">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
    </PIN>
    <PIN pinname="Descriptive Name" slicecount="1" values="Position">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="XYZ" dstnodeid="24" dstpinname="Y Input Value">
-   </LINK>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="25">
    <BOUNDS type="Node" left="10087" top="2555" width="1035" height="270">
    </BOUNDS>
@@ -333,5 +321,43 @@
    </LINKPOINT>
    <LINKPOINT x="10622" y="2305">
    </LINKPOINT>
+   </LINK>
+   <NODE systemname="ApplyTransform (Transform Vector)" nodename="ApplyTransform (Transform Vector)" componentmode="Hidden" id="26">
+   <BOUNDS type="Node" left="3396" top="3624" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ Transformed" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="XYZ UnTransformed" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="26" srcpinname="XYZ Transformed" dstnodeid="24" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="11" srcpinname="Output Node" dstnodeid="26" dstpinname="Transform" linkstyle="Bezier">
+   <LINKPOINT x="1248" y="2076">
+   </LINKPOINT>
+   <LINKPOINT x="3384" y="2076">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="XYZ" dstnodeid="26" dstpinname="XYZ UnTransformed" linkstyle="Bezier">
+   <LINKPOINT x="3468" y="3228">
+   </LINKPOINT>
+   <LINKPOINT x="4608" y="3228">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="PositionX(m)" dstnodeid="4" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="PositionY(m)" dstnodeid="4" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="PositionZ(m)" dstnodeid="4" dstpinname="Z">
+   <LINKPOINT x="5328" y="2568">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="RotationX(m)" dstnodeid="5" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="RotationY(m)" dstnodeid="5" dstpinname="Y">
+   </LINK>
+   <LINK srcnodeid="16" srcpinname="RotationZ(m)" dstnodeid="5" dstpinname="Z">
    </LINK>
    </PATCH>

@@ -445,7 +445,7 @@
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
-   <PIN pinname="DepthEpsilon" slicecount="1" values="0.0001">
+   <PIN pinname="DepthEpsilon" slicecount="1" values="0.0001" visible="1">
    </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="Depth Buffer" dstnodeid="61" dstpinname="Texture In">
