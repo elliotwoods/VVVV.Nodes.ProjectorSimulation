@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)" scrollx="290" scrolly="0">
-   <BOUNDS height="6870" left="0" top="8460" type="Window" width="15960">
+   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Transform (ProjectorSimulation).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\Transform (ProjectorSimulation).v4p" systemname="Transform (ProjectorSimulation)" scrollx="168" scrolly="300">
+   <BOUNDS height="6840" left="0" top="8460" type="Window" width="16490">
    </BOUNDS>
    <NODE componentmode="InABox" id="6" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="1530" top="5505" type="Node" width="100">
@@ -437,13 +437,9 @@
    </BOUNDS>
    <PIN pinname="Descriptive Name" slicecount="1" values="|Projection Transform|">
    </PIN>
+   <PIN pinname="Input Node" visible="1" slicecount="1" values="||">
+   </PIN>
    </NODE>
-   <LINK srcnodeid="29" srcpinname="Transform Out" dstnodeid="53" dstpinname="Input Node" linkstyle="Bezier">
-   <LINKPOINT x="6310" y="4900">
-   </LINKPOINT>
-   <LINKPOINT x="5360" y="4900">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="Vector (3d Split)" nodename="Vector (3d Split)" componentmode="Hidden" id="54">
    <BOUNDS type="Node" left="4440" top="1380" width="100" height="100">
    </BOUNDS>
@@ -489,5 +485,11 @@
    <LINK srcnodeid="54" srcpinname="Y" dstnodeid="59" dstpinname="Y">
    </LINK>
    <LINK srcnodeid="54" srcpinname="X" dstnodeid="58" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="29" srcpinname="Transform Out" dstnodeid="53" dstpinname="Input Node" linkstyle="Bezier">
+   <LINKPOINT x="6310" y="4900">
+   </LINKPOINT>
+   <LINKPOINT x="5360" y="4900">
+   </LINKPOINT>
    </LINK>
    </PATCH>

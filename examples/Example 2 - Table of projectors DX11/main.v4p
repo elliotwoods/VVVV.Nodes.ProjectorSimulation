@@ -97,6 +97,10 @@
    </PIN>
    <PIN pinname="Far Plane" slicecount="1" values="10">
    </PIN>
+   <PIN pinname="View Transform" visible="1">
+   </PIN>
+   <PIN pinname="Projection Transform" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="47" srcpinname="ViewProjection transform" dstnodeid="40" dstpinname="ViewProjection" linkstyle="Bezier">
    <LINKPOINT x="2892" y="8742">
@@ -521,6 +525,10 @@
    </PIN>
    <PIN pinname="Fill" slicecount="1" values="0">
    </PIN>
+   <PIN pinname="View Transform" visible="1">
+   </PIN>
+   <PIN pinname="Projection Transform" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="40" srcpinname="Output" dstnodeid="8" dstpinname="Color">
    </LINK>
@@ -855,5 +863,9 @@
    <LINK srcnodeid="99" srcpinname="Layer Out" dstnodeid="11" dstpinname="Layer 1">
    </LINK>
    <LINK srcnodeid="108" srcpinname="Output Node" dstnodeid="11" dstpinname="Layer 2">
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="View Transform" dstnodeid="8" dstpinname="View Transform">
+   </LINK>
+   <LINK srcnodeid="47" srcpinname="Projection Transform" dstnodeid="8" dstpinname="Projection Transform">
    </LINK>
    </PATCH>
