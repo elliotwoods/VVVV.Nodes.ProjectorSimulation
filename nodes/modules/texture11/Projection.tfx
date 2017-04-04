@@ -54,7 +54,7 @@ SamplerState g_SamPoint {
 
 Texture2D<float> TexTargetDepth : PREVIOUS;
 Texture2DArray<float> TexArrayDepth <string uiname="Depth Maps"; >;
-Texture2D TexImage <string uiname="Image";>;
+Texture2DArray<float4> TexImage <string uiname="Image";>;
 //
 //--
 
@@ -133,7 +133,7 @@ float3 applyProjector(int i, Pixel pixel, int projectorCount)
 	
 	value *= brightness[i];
 	
-	value *= abs(PosProjector.x) < 1.0f && abs(PosProjector.y) < 1.0f;	
+	value *= abs(PosProjector.x) < 1.0f && abs(PosProjector.y) < 1.0f;
 	//
 	//--
 	
@@ -143,14 +143,15 @@ float3 applyProjector(int i, Pixel pixel, int projectorCount)
 	bool hasImageTexture = false;
 	{
 		uint width, height;
+		uint elements;
 		uint levelCount;
-		TexImage.GetDimensions(0, width, height, levelCount);
+		TexImage.GetDimensions(0, width, height, elements, levelCount);
 		hasImageTexture = width != 1 && height != 1;
 	}
 	
 	float3 image;
 	if(hasImageTexture) {
-		image = TexImage.Sample(g_SamLinear, DepthMapCd.xy).rgb;
+		image = TexImage.Sample(g_SamLinear, float3(DepthMapCd.xy, i)).rgb;
 	} else {
 		image = float3(0,0,1); //blue = no signal
 	}

@@ -1,0 +1,57 @@
+<?xml version="1.0" standalone="yes"?>
+<projectors>
+  <xs:schema id="projectors" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="projectors" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="Projectors">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="PositionX_x0028_m_x0029_" type="xs:double" default="0" />
+                <xs:element name="PositionY_x0028_m_x0029_" type="xs:double" default="0" />
+                <xs:element name="PositionZ_x0028_m_x0029_" type="xs:double" default="0" />
+                <xs:element name="RotationX_x0028_m_x0029_" type="xs:double" default="0" />
+                <xs:element name="RotationY_x0028_m_x0029_" type="xs:double" default="0" />
+                <xs:element name="RotationZ_x0028_m_x0029_" type="xs:double" default="0" />
+                <xs:element name="ThrowRatio" type="xs:double" default="0" />
+                <xs:element name="Width_x0028_px_x0029_" type="xs:int" default="0" />
+                <xs:element name="Height_x0028_px_x0029_" type="xs:int" default="0" />
+                <xs:element name="LensOffsetX" type="xs:double" default="0" />
+                <xs:element name="LensOffsetY" type="xs:double" default="0" />
+                <xs:element name="Enabled" type="xs:boolean" default="false" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <Projectors>
+    <PositionX_x0028_m_x0029_>1.7800000000000018</PositionX_x0028_m_x0029_>
+    <PositionY_x0028_m_x0029_>1.6440000000000101</PositionY_x0028_m_x0029_>
+    <PositionZ_x0028_m_x0029_>-0.68199999999997418</PositionZ_x0028_m_x0029_>
+    <RotationX_x0028_m_x0029_>0.060000000000000116</RotationX_x0028_m_x0029_>
+    <RotationY_x0028_m_x0029_>-0.064000000000000015</RotationY_x0028_m_x0029_>
+    <RotationZ_x0028_m_x0029_>0</RotationZ_x0028_m_x0029_>
+    <ThrowRatio>1.4</ThrowRatio>
+    <Width_x0028_px_x0029_>1920</Width_x0028_px_x0029_>
+    <Height_x0028_px_x0029_>1080</Height_x0028_px_x0029_>
+    <LensOffsetX>0</LensOffsetX>
+    <LensOffsetY>0.5</LensOffsetY>
+    <Enabled>true</Enabled>
+  </Projectors>
+  <Projectors>
+    <PositionX_x0028_m_x0029_>-0.27400000000000113</PositionX_x0028_m_x0029_>
+    <PositionY_x0028_m_x0029_>0.56000000000000472</PositionY_x0028_m_x0029_>
+    <PositionZ_x0028_m_x0029_>-2.3899999999999966</PositionZ_x0028_m_x0029_>
+    <RotationX_x0028_m_x0029_>0</RotationX_x0028_m_x0029_>
+    <RotationY_x0028_m_x0029_>0</RotationY_x0028_m_x0029_>
+    <RotationZ_x0028_m_x0029_>0</RotationZ_x0028_m_x0029_>
+    <ThrowRatio>1.4</ThrowRatio>
+    <Width_x0028_px_x0029_>1920</Width_x0028_px_x0029_>
+    <Height_x0028_px_x0029_>1080</Height_x0028_px_x0029_>
+    <LensOffsetX>0</LensOffsetX>
+    <LensOffsetY>0</LensOffsetY>
+    <Enabled>true</Enabled>
+  </Projectors>
+</projectors>

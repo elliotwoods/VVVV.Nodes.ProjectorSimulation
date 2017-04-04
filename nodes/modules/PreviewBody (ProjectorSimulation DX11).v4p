@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta33.7_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewBody (ProjectorSimulation DX11).v4p" systemname="PreviewBody (ProjectorSimulation DX11)" filename="C:\vvvv\vvvv_45beta33.7_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewBody (ProjectorSimulation DX11).v4p" scrollx="0" scrolly="940">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewBody (ProjectorSimulation DX11).v4p" systemname="PreviewBody (ProjectorSimulation DX11)" filename="C:\vvvv\vvvv_45beta33.7_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewBody (ProjectorSimulation DX11).v4p" scrollx="0" scrolly="324">
    <BOUNDS type="Window" left="7180" top="12030" width="9000" height="6000">
    </BOUNDS>
-   <PACK Name="addonpack" Version="33.7.0">
+   <PACK Name="addonpack" Version="34.1.0">
    </PACK>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="0" systemname="IOBox (Node)">
    <BOUNDS type="Box" left="1090" top="540" width="800" height="240">
@@ -131,7 +131,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="3780" top="470" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0.5,0,0">
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,0,0">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>

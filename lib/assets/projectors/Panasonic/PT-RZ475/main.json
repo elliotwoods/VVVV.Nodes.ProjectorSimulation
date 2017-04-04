@@ -1,0 +1,49 @@
+{
+	"Dimensions" : {
+		"Width" : 455,
+		"Height" : 137,
+		"Depth" : 409
+	},
+
+	"Lens Position" : {
+		"X" : 227.5,
+		"Y" : 73.3,
+		"Z" : 0
+	},
+
+	"Specifications" : {
+		"Resolution" : {
+			"Width" : 1920,
+			"Height" : 1080
+		},
+		"Brightness" : 3000,
+		"Contrast" : 20000,
+		"Imaging Technology" : "DLP",
+		"Lamp Technology" : "Laser + LED"
+	},
+
+	"Connections" : [
+		"HDMI",
+		"DVI",
+		"RGB",
+		"Component",
+		"LAN"
+		],
+
+	"Lens" : {
+		"Throw Ratio" : {
+			"Minimum" : 0.8,
+			"Maximum" : 0.8,
+		},
+		"Lens Shift" : {
+			"X" : {
+				"Maximum" : 0.034,
+				"Minimum" : -0.034
+			},
+			"Y" : {
+				"Maximum" : 0.1,
+				"Minimum" : -0.1
+			},
+		}
+	}
+}

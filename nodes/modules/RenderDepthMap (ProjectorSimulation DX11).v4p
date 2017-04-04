@@ -63,7 +63,7 @@
    </PIN>
    </NODE>
    <NODE systemname="Renderer (DX11 TextureArray)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="Renderer (DX11 TextureArray)" componentmode="Hidden" id="10">
-   <BOUNDS type="Node" left="1870" top="5120" width="7180" height="270">
+   <BOUNDS type="Node" left="1894" top="5120" width="7180" height="270">
    </BOUNDS>
    <PIN pinname="SizeXY" visible="1">
    </PIN>
@@ -89,17 +89,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="0" srcpinname="Y Output Value" dstnodeid="10" dstpinname="SizeXY" linkstyle="Bezier">
-   <LINKPOINT x="6030" y="3455">
+   <LINKPOINT x="6038" y="3455">
    </LINKPOINT>
-   <LINKPOINT x="3120" y="3455">
+   <LINKPOINT x="3136" y="3455">
    </LINKPOINT>
    </LINK>
    <LINK srcnodeid="1" srcpinname="Output Node" dstnodeid="10" dstpinname="View">
    </LINK>
    <LINK srcnodeid="5" srcpinname="Y Output Value" dstnodeid="10" dstpinname="Enabled" linkstyle="Bezier">
-   <LINKPOINT x="7550" y="3470">
+   <LINKPOINT x="7558" y="3470">
    </LINKPOINT>
-   <LINKPOINT x="6660" y="3470">
+   <LINKPOINT x="6676" y="3470">
    </LINKPOINT>
    </LINK>
    <PACK Name="addonpack" Version="34.1.0">

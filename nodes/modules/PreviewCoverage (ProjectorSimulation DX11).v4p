@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
    <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation DX11).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\PreviewCoverage (ProjectorSimulation Simple).v4p" systemname="PreviewCoverage (ProjectorSimulation Simple)" scrollx="0" scrolly="0" locked="0">
-   <BOUNDS height="11580" left="1560" top="5810" type="Window" width="20970">
+   <BOUNDS height="11580" left="-600" top="9648" type="Window" width="20964">
    </BOUNDS>
    <NODE componentmode="InABox" id="2" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="5965" top="300" type="Node" width="100">
@@ -41,9 +41,9 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="16" systemname="IOBox (Node)">
-   <BOUNDS type="Box" left="16670" top="8120" width="2260" height="240">
+   <BOUNDS type="Box" left="16706" top="4364" width="2260" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="16670" top="8120" width="0" height="0">
+   <BOUNDS type="Node" left="16706" top="4364" width="0" height="0">
    </BOUNDS>
    <PIN pinname="Input Node" slicecount="1" values="||">
    </PIN>
@@ -445,7 +445,7 @@
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
-   <PIN pinname="DepthEpsilon" slicecount="1" values="0.0001" visible="1">
+   <PIN pinname="DepthEpsilon" slicecount="1" visible="1" values="0.0001">
    </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="Depth Buffer" dstnodeid="61" dstpinname="Texture In">
@@ -469,8 +469,6 @@
    <LINK srcnodeid="29" srcpinname="Y Output Value" dstnodeid="61" dstpinname="ApplyShadows">
    </LINK>
    <LINK srcnodeid="30" srcpinname="Y Output Value" dstnodeid="61" dstpinname="ApplyFade">
-   </LINK>
-   <LINK srcnodeid="16" srcpinname="Output Node" dstnodeid="61" dstpinname="Image">
    </LINK>
    <LINK srcnodeid="61" srcpinname="Query" dstnodeid="43" dstpinname="Input Node">
    </LINK>
@@ -507,5 +505,17 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="63" srcpinname="Y Output Value" dstnodeid="61" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="TextureSpreadToArray (DX11.Texture2DArray)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\TextureSpreadToArray (DX11.Texture2DArray).v4p" nodename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\TextureSpreadToArray (DX11.Texture2DArray).v4p" componentmode="Hidden" id="84">
+   <BOUNDS type="Node" left="16698" top="4902" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="13882" top="1294" width="5632" height="7216">
+   </BOUNDS>
+   <BOUNDS type="Window" left="16608" top="14952" width="5628" height="7212">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="16" srcpinname="Output Node" dstnodeid="84" dstpinname="Texture In - Input - Texture">
+   </LINK>
+   <LINK srcnodeid="84" srcpinname="Texture Out" dstnodeid="61" dstpinname="Image">
    </LINK>
    </PATCH>

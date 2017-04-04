@@ -115,7 +115,7 @@
    <NODE systemname="PreviewCoverage (ProjectorSimulation DX11)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation DX11).v4p" nodename="PreviewCoverage (ProjectorSimulation DX11)" componentmode="Hidden" id="9" stayontop="0">
    <BOUNDS type="Node" left="4360" top="6150" width="9020" height="270">
    </BOUNDS>
-   <BOUNDS type="Window" left="1560" top="5810" width="20970" height="11580">
+   <BOUNDS type="Window" left="-600" top="9648" width="20964" height="11580">
    </BOUNDS>
    <PIN pinname="Layer" visible="1" slicecount="1" values="||">
    </PIN>
