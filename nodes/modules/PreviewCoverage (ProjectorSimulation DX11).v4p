@@ -1,6 +1,6 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation DX11).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\PreviewCoverage (ProjectorSimulation Simple).v4p" systemname="PreviewCoverage (ProjectorSimulation Simple)" scrollx="0" scrolly="0" locked="0">
-   <BOUNDS height="11580" left="-600" top="9648" type="Window" width="20964">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta35.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\PreviewCoverage (ProjectorSimulation DX11).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\PreviewCoverage (ProjectorSimulation Simple).v4p" systemname="PreviewCoverage (ProjectorSimulation Simple)" scrollx="0" scrolly="500" locked="0">
+   <BOUNDS height="11580" left="24540" top="6490" type="Window" width="20960">
    </BOUNDS>
    <NODE componentmode="InABox" id="2" nodename="IOBox (Node)" systemname="IOBox (Node)">
    <BOUNDS height="100" left="5965" top="300" type="Node" width="100">
@@ -54,7 +54,7 @@
    </NODE>
    <PACK Name="VVVV.Packs" Version="0.1.0">
    </PACK>
-   <PACK Name="addonpack" Version="34.1.0">
+   <PACK Name="addonpack" Version="35.0.0">
    </PACK>
    <NODE systemname="Count (Node)" nodename="Count (Node)" componentmode="Hidden" id="27">
    <BOUNDS type="Node" left="7120" top="8520" width="100" height="100">
@@ -257,7 +257,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="10980" top="1940" width="2760" height="800">
    </BOUNDS>
-   <PIN pinname="Input String" visible="0" slicecount="1" values="|NOTE: If you have more than 64 projectors, then you need to change MAX_PROJECTOR_COUNT in Coverage.fx|">
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|NOTE: If you have more than 16 projectors, then you need to change MAX_PROJECTOR_COUNT in Coverage.fx|">
    </PIN>
    <PIN pinname="Output String" visible="0">
    </PIN>
@@ -315,7 +315,7 @@
    </BOUNDS>
    <BOUNDS type="Box" left="3380" top="5510" width="800" height="240">
    </BOUNDS>
-   <PIN pinname="Descriptive Name" slicecount="1" values="|Renderer Projector|">
+   <PIN pinname="Descriptive Name" slicecount="1" values="|Renderer Projection|">
    </PIN>
    <PIN pinname="Output Node" visible="1">
    </PIN>
@@ -427,9 +427,9 @@
    </PIN>
    <PIN pinname="ActiveProjectorCount" visible="1" slicecount="1" values="2">
    </PIN>
-   <PIN pinname="tProjector" visible="1">
+   <PIN pinname="tProjector" visible="1" slicecount="1" values="||">
    </PIN>
-   <PIN pinname="brightness" visible="1">
+   <PIN pinname="brightness" visible="1" slicecount="1" values="0">
    </PIN>
    <PIN pinname="Depth Maps" visible="1">
    </PIN>
@@ -447,6 +447,8 @@
    </PIN>
    <PIN pinname="DepthEpsilon" slicecount="1" visible="1" values="0.0001">
    </PIN>
+   <PIN pinname="test" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="48" srcpinname="Depth Buffer" dstnodeid="61" dstpinname="Texture In">
    </LINK>
@@ -455,12 +457,6 @@
    <LINK srcnodeid="35" srcpinname="Y Output Value" dstnodeid="61" dstpinname="ProjectorPositionXYZ">
    </LINK>
    <LINK srcnodeid="40" srcpinname="Y Output Value" dstnodeid="61" dstpinname="ProjectorLookVectorXYZ">
-   </LINK>
-   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="61" dstpinname="tProjector" linkstyle="VHV">
-   <LINKPOINT x="5988" y="1040">
-   </LINKPOINT>
-   <LINKPOINT x="8032" y="1040">
-   </LINKPOINT>
    </LINK>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="61" dstpinname="brightness">
    </LINK>
@@ -518,4 +514,100 @@
    </LINK>
    <LINK srcnodeid="84" srcpinname="Texture Out" dstnodeid="61" dstpinname="Image">
    </LINK>
+   <NODE systemname="ApplyTransform (Transform Vector)" nodename="ApplyTransform (Transform Vector)" componentmode="Hidden" id="88">
+   <BOUNDS type="Node" left="8920" top="6370" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="XYZ Transformed" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="XYZ UnTransformed" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="89">
+   <BOUNDS type="Box" left="8920" top="6860" width="800" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8920" top="6860" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="88" srcpinname="XYZ Transformed" dstnodeid="89" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="88" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="90">
+   <BOUNDS type="Box" left="10110" top="5330" width="800" height="720">
+   </BOUNDS>
+   <BOUNDS type="Node" left="10110" top="5330" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="3" visible="1" values="0,-0.25,-6">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="3">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="90" srcpinname="Y Output Value" dstnodeid="88" dstpinname="XYZ UnTransformed">
+   </LINK>
+   <NODE systemname="GetMatrix (Transform)" nodename="GetMatrix (Transform)" componentmode="Hidden" id="91">
+   <BOUNDS type="Node" left="9180" top="3510" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Matrix Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="92">
+   <BOUNDS type="Box" left="9240" top="4070" width="3200" height="960">
+   </BOUNDS>
+   <BOUNDS type="Node" left="9240" top="4070" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Vector Size" slicecount="1" values="16">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="91" srcpinname="Matrix Out" dstnodeid="92" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="91" dstpinname="Transform">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="61" dstpinname="tProjector" linkstyle="VHV">
+   <LINKPOINT x="6000" y="1220">
+   </LINKPOINT>
+   <LINKPOINT x="8020" y="1220">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Output Node" dstnodeid="61" dstpinname="test">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="93">
+   <BOUNDS type="Node" left="14240" top="6670" width="12460" height="230">
+   </BOUNDS>
+   <BOUNDS type="Box" left="14240" top="6670" width="3380" height="1090">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|WARNING!!!! HACKED. Because of a bug in DX11 when inputting an array of transforms, we are currently bypassing array of transform input and inputting only 1 projector transform|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

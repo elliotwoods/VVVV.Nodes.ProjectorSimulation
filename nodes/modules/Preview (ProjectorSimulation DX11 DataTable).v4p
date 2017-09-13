@@ -1,8 +1,8 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11 DataTable).v4p" systemname="Preview (ProjectorSimulation DX11 DataTable)" filename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11 DataTable).v4p" scrollx="0" scrolly="0">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta35.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11 DataTable).v4p" systemname="Preview (ProjectorSimulation DX11 DataTable)" filename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\Preview (ProjectorSimulation DX11 DataTable).v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="15230" top="9470" width="9000" height="6000">
    </BOUNDS>
-   <PACK Name="addonpack" Version="34.1.0">
+   <PACK Name="addonpack" Version="35.0.0">
    </PACK>
    <NODE systemname="ColorSpread (ProjectorSimulation)" filename="%VVVV%\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\ColorSpread (ProjectorSimulation).v4p" nodename="ColorSpread (ProjectorSimulation)" componentmode="Hidden" id="1">
    <BOUNDS type="Node" left="3295" top="1688" width="100" height="100">
@@ -36,6 +36,10 @@
    <BOUNDS type="Window" left="10776" top="7032" width="15804" height="15744">
    </BOUNDS>
    <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="View Transform" visible="1">
+   </PIN>
+   <PIN pinname="Projection Transform" visible="1">
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Node)" componentmode="InABox" id="3" systemname="IOBox (Node)">
@@ -121,6 +125,10 @@
    </PIN>
    <PIN pinname="Enabled" visible="1">
    </PIN>
+   <PIN pinname="View Transform" visible="1">
+   </PIN>
+   <PIN pinname="Projection Transform" visible="1">
+   </PIN>
    </NODE>
    <LINK srcnodeid="2" srcpinname="ViewProjection transform" dstnodeid="0" dstpinname="ViewProjection In">
    </LINK>
@@ -183,5 +191,9 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="10" srcpinname="Y Output Value" dstnodeid="0" dstpinname="Enabled">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="View Transform" dstnodeid="0" dstpinname="View Transform">
+   </LINK>
+   <LINK srcnodeid="2" srcpinname="Projection Transform" dstnodeid="0" dstpinname="Projection Transform">
    </LINK>
    </PATCH>

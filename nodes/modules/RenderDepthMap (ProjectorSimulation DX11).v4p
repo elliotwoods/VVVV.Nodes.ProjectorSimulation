@@ -1,5 +1,5 @@
-<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
-   <PATCH nodename="C:\vvvv\vvvv_45beta34.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\RenderDepthMap (ProjectorSimulation DX11).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\RenderDepthMap (ProjectorSimulation Simple).v4p" systemname="RenderDepthMap (ProjectorSimulation Simple)" scrollx="950" scrolly="10">
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.2.dtd" >
+   <PATCH nodename="C:\vvvv\vvvv_50beta35.2_x64\packs\VVVV.Nodes.ProjectorSimulation\nodes\modules\RenderDepthMap (ProjectorSimulation DX11).v4p" filename="C:\kimchiandchips\VVVV.Research\VVVV.Nodes.ProjectorSimulation\RenderDepthMap (ProjectorSimulation Simple).v4p" systemname="RenderDepthMap (ProjectorSimulation Simple)" scrollx="950" scrolly="10">
    <BOUNDS height="8190" left="1020" top="9930" type="Window" width="10110">
    </BOUNDS>
    <NODE componentmode="InABox" id="0" nodename="IOBox (Value Advanced)" systemname="IOBox (Value Advanced)">
@@ -102,7 +102,7 @@
    <LINKPOINT x="6676" y="3470">
    </LINKPOINT>
    </LINK>
-   <PACK Name="addonpack" Version="34.1.0">
+   <PACK Name="addonpack" Version="35.0.0">
    </PACK>
    <NODE systemname="DepthOnly (DX11.Layer)" filename="%VVVV%\packs\dx11\nodes\plugins\VVVV.DX11.Nodes.dll" nodename="DepthOnly (DX11.Layer)" componentmode="Hidden" id="12">
    <BOUNDS type="Node" left="2460" top="4100" width="100" height="100">

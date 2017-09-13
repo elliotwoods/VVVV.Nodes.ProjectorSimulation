@@ -9,15 +9,9 @@
 //Parameters
 //--
 //
-#define MAX_PROJECTOR_COUNT 64
+#define MAX_PROJECTOR_COUNT 16
 
 //transforms
-float4x4 tW: WORLD;        //the models world matrix
-float4x4 tV: VIEW;         //view matrix as set via Renderer (EX9)
-float4x4 tP: PROJECTION;   //projection matrix as set via Renderer (EX9)
-float4x4 tWVP: WORLDVIEWPROJECTION;
-float4x4 tWV: WORLDVIEW;
-float4x4 tWIT: WORLDINVERSETRANSPOSE;
 float4x4 TargetVPI;
 float3 ProjectorPosition[MAX_PROJECTOR_COUNT];
 float3 ProjectorLookVector[MAX_PROJECTOR_COUNT];
@@ -25,6 +19,7 @@ float3 ProjectorLookVector[MAX_PROJECTOR_COUNT];
 int ActiveProjectorCount = 2;
 
 float4x4 tProjector[MAX_PROJECTOR_COUNT];
+float4x4 test;
 float brightness[MAX_PROJECTOR_COUNT];
 float DepthEpsilon = 1e-4;
 
@@ -83,14 +78,16 @@ struct Pixel {
 //
 float3 applyProjector(int i, Pixel pixel, int projectorCount)
 {
-	float4 PosProjector = mul(pixel.PosW, tProjector[i]);
+	const float4x4 projectorTransform = test;//tProjector[i];
+	
+	float4 PosProjector = mul(pixel.PosW, projectorTransform);
 	float Depth = PosProjector.z / PosProjector.w;	
 	PosProjector /= PosProjector.w;
 	float3 DepthMapCd;
 	DepthMapCd.x = (1.0f + PosProjector.x) / 2.0f;
 	DepthMapCd.y = (1.0f - PosProjector.y) / 2.0f;
 	DepthMapCd.z = i;
-	bool insideProjector = all(abs(DepthMapCd - 0.5) <= 0.5f);
+	
 	/*DEBUG*/ //return DepthMapCd * insideProjector;
 	
 
